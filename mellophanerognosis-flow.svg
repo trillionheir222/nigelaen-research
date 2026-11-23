@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Prospective inference: reasoning from possible futures</title>
+  <desc id="desc">A diagram showing present information generating possible future models, which are compared to derive candidate content that returns to present reasoning. A time line moves from left to right beneath the process.</desc>
+  <style>
+    .bg{fill:#13202d}.line{stroke:#a9dfe8;stroke-width:3;fill:none}.thin{stroke:#a9dfe8;stroke-width:2;fill:none;opacity:.75}.soft{stroke:#a9dfe8;stroke-width:2;fill:none;opacity:.4;stroke-dasharray:9 10}.box{fill:#1e3344;stroke:#a9dfe8;stroke-width:2}.box2{fill:#315464;stroke:#a9dfe8;stroke-width:2}.return{fill:#a9dfe8}.ink{fill:#13202d}.paper{fill:#f4f2ea}.muted{fill:#c4d7d6}.label{font:600 16px Arial,sans-serif;letter-spacing:2px}.head{font:400 33px Georgia,serif}.body{font:400 19px Arial,sans-serif}.small{font:400 16px Arial,sans-serif}.mono{font:600 14px 'Courier New',monospace;letter-spacing:1.5px}
+  </style>
+  <rect class="bg" width="1400" height="820" rx="4"/>
+  <text x="75" y="76" class="label" fill="#a9dfe8">A PROPOSED ORGANIZATION OF REASONING</text>
+  <text x="75" y="125" class="head paper">Prospective inference is not a message from the future.</text>
+  <text x="75" y="157" class="body muted">It is a way of investigating the implications of several models in the present.</text>
+
+  <rect x="75" y="262" width="265" height="205" rx="12" class="box"/>
+  <text x="103" y="300" class="mono" fill="#a9dfe8">01 · PRESENT</text>
+  <text x="103" y="346" class="head paper">Available</text><text x="103" y="382" class="head paper">information</text>
+  <text x="103" y="421" class="small muted">observations · memory</text><text x="103" y="446" class="small muted">assumptions · evidence</text>
+
+  <path d="M340 365 H420" class="line"/><path d="M408 353 L420 365 L408 377" class="line"/>
+  <text x="345" y="335" class="mono" fill="#a9dfe8">MODEL</text>
+
+  <rect x="455" y="222" width="310" height="290" rx="12" class="box2"/>
+  <text x="483" y="260" class="mono" fill="#a9dfe8">02 · PROSPECTIVE-STATE DOMAIN</text>
+  <path d="M505 327 C560 282 612 282 685 328" class="thin"/><path d="M505 327 C570 356 620 390 711 425" class="thin"/><path d="M505 327 C576 432 635 448 704 457" class="thin"/>
+  <circle cx="505" cy="327" r="10" fill="#f4f2ea"/><circle cx="685" cy="328" r="10" fill="#a9dfe8"/><circle cx="711" cy="425" r="10" fill="#a9dfe8"/><circle cx="704" cy="457" r="10" fill="#a9dfe8"/>
+  <text x="483" y="493" class="small muted">several possible trajectories</text>
+
+  <path d="M765 365 H845" class="line"/><path d="M833 353 L845 365 L833 377" class="line"/>
+  <text x="775" y="335" class="mono" fill="#a9dfe8">COMPARE</text>
+
+  <rect x="880" y="262" width="230" height="205" rx="12" class="box"/>
+  <text x="908" y="300" class="mono" fill="#a9dfe8">03 · DERIVE</text>
+  <text x="908" y="346" class="head paper">Candidate</text><text x="908" y="382" class="head paper">content</text>
+  <text x="908" y="421" class="small muted">constraints · dependencies</text><text x="908" y="446" class="small muted">questions · divergences</text>
+
+  <path d="M1110 365 H1200 V235 H208 V262" class="soft"/>
+  <path d="M196 250 L208 262 L220 250" class="soft"/>
+  <text x="630" y="198" class="mono" fill="#ef745d">DASHED LOOP: RETURN TO PRESENT REASONING</text>
+  <text x="684" y="220" class="mono" fill="#ef745d">NOT A MOVEMENT BACKWARD IN TIME</text>
+  <text x="535" y="545" class="small" fill="#a9dfe8">The return is a present update: it can be retained, tested, revised, or used to guide the next inquiry.</text>
+
+  <line x1="125" y1="675" x2="1278" y2="675" class="line"/>
+  <path d="M1278 675 L1258 663 L1258 687 Z" fill="#a9dfe8"/>
+  <text x="125" y="648" class="mono" fill="#a9dfe8">PRESENT REASONING EPISODE</text><text x="1088" y="715" class="mono" fill="#a9dfe8">LATER EVALUATION</text>
+</svg>

@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Mellophanerognosis and the Mellognostic Engram — a theoretical monograph by Nigel Patch."
+    />
+    <title>Mellophanerognosis — Nigelæn Research</title>
+    <style>
+      :root {
+        --ink: #13202d;
+        --paper: #f4f2ea;
+        --blue: #7ed7e6;
+        --violet: #d5c4ff;
+        --coral: #ef745d;
+        --line: #9ca5a8;
+        --serif: Georgia, serif;
+        --sans: Arial, sans-serif;
+        --mono: "Courier New", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 17px/1.62 var(--sans);
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 5px;
+      }
+      .head {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 6vw;
+        background: #f4f2eaeb;
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(8px);
+      }
+      .brand {
+        font: 700 11px/1.1 var(--mono);
+        letter-spacing: 0.11em;
+        text-decoration: none;
+      }
+      .brand b {
+        display: inline-grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        border: 1px solid;
+        border-radius: 50%;
+        font: italic 22px var(--serif);
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        font: 11px var(--mono);
+        text-transform: uppercase;
+      }
+      .hero,
+      .section {
+        padding: clamp(4rem, 9vw, 9rem) max(6vw, 24px);
+      }
+      .inner {
+        max-width: 1120px;
+        margin: auto;
+      }
+      .label,
+      .tag {
+        font: 11px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .tag {
+        display: inline-block;
+        padding: 4px 9px;
+        border: 1px solid currentColor;
+        border-radius: 20px;
+        margin-left: 9px;
+      }
+      .hero {
+        background: var(--ink);
+        color: var(--paper);
+        min-height: 78vh;
+        display: grid;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: min(70vw, 900px);
+        aspect-ratio: 1;
+        right: -25vw;
+        bottom: -48vw;
+        border: 1px solid #7ed7e677;
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 64px #7ed7e611,
+          0 0 0 129px #7ed7e60c;
+      }
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        letter-spacing: -0.052em;
+      }
+      .hero h1 {
+        font-size: clamp(3.7rem, 9.5vw, 8.8rem);
+        line-height: 0.83;
+        margin: 52px 0 28px;
+        max-width: 900px;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--blue);
+      }
+      .lede {
+        max-width: 810px;
+        font: clamp(1.35rem, 2.7vw, 2.5rem)/1.17 var(--serif);
+      }
+      .hero a,
+      .record a {
+        color: var(--blue);
+      }
+      h2 {
+        font-size: clamp(2.8rem, 6vw, 5.6rem);
+        line-height: 0.88;
+        margin: 13px 0 22px;
+      }
+      h3 {
+        font-size: clamp(1.75rem, 3vw, 2.8rem);
+        line-height: 0.95;
+        margin: 32px 0 15px;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(35px, 7vw, 100px);
+      }
+      .statement {
+        padding: clamp(28px, 5vw, 62px);
+        background: var(--blue);
+        font: clamp(1.65rem, 3.3vw, 3.25rem)/1.1 var(--serif);
+        letter-spacing: -0.04em;
+      }
+      .note {
+        border-left: 3px solid var(--coral);
+        padding-left: 19px;
+        max-width: 720px;
+      }
+      .flow {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .flow .inner {
+        max-width: 1240px;
+      }
+      .flow-head {
+        max-width: 720px;
+      }
+      .figure {
+        margin: 55px 0 0;
+      }
+      .figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid #a9dfe855;
+      }
+      .figure figcaption {
+        margin-top: 13px;
+        color: #c4d7d6;
+        font-size: 0.9rem;
+      }
+      .reconciliation {
+        margin-top: clamp(35px, 6vw, 70px);
+      }
+      .reconciliation figcaption {
+        color: var(--ink);
+      }
+      .diagram {
+        margin-top: 55px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: #f4f2ea55;
+      }
+      .node {
+        min-height: 220px;
+        padding: 24px;
+        background: #1d3040;
+        display: flex;
+        flex-direction: column;
+      }
+      .node:nth-child(2) {
+        background: #254354;
+      }
+      .node:nth-child(3) {
+        background: #36595e;
+      }
+      .node:nth-child(4) {
+        background: var(--blue);
+        color: var(--ink);
+      }
+      .node .number {
+        font: 11px var(--mono);
+        color: var(--blue);
+      }
+      .node:last-child .number {
+        color: var(--ink);
+      }
+      .node h3 {
+        margin-top: auto;
+        font-size: clamp(1.65rem, 2.5vw, 2.5rem);
+      }
+      .node p {
+        font-size: 0.92rem;
+        margin: 0;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .cards article {
+        padding: 35px;
+        background: var(--paper);
+        min-height: 335px;
+      }
+      .cards article:nth-child(2) {
+        background: var(--violet);
+      }
+      .cards h3 {
+        margin: 54px 0 15px;
+      }
+      .card-label {
+        font: 11px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .boundaries {
+        background: #e9dedb;
+      }
+      .boundaries ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--ink);
+      }
+      .boundaries li {
+        padding: 21px 0;
+        border-bottom: 1px solid var(--ink);
+        font: clamp(1.15rem, 2vw, 1.7rem)/1.2 var(--serif);
+      }
+      .boundaries li:before {
+        content: "Not ";
+        font: 11px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #9b4132;
+        margin-right: 15px;
+      }
+      .record {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .record h2 {
+        max-width: 690px;
+      }
+      .record dl {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 12px 22px;
+        max-width: 800px;
+      }
+      .record dt {
+        font: 11px var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      .record dd {
+        margin: 0;
+      }
+      footer {
+        padding: 26px 6vw;
+        background: var(--coral);
+        font: 12px var(--mono);
+      }
+      @media (max-width: 700px) {
+        nav {
+          display: none;
+        }
+        .hero {
+          min-height: 650px;
+        }
+        .split,
+        .cards,
+        .diagram {
+          grid-template-columns: 1fr;
+        }
+        .hero,
+        .section {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        .node {
+          min-height: 180px;
+        }
+        .record dl {
+          grid-template-columns: 1fr;
+          gap: 5px;
+        }
+        .record dd {
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <a class="brand" href="index.html"><b>N</b>NIGELÆN<br />RESEARCH</a>
+      <nav>
+        <a href="index.html#publications">Publications</a
+        ><a href="https://orcid.org/0009-0003-1812-0895">ORCID</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="inner">
+          <p class="label">
+            Theoretical monograph <span class="tag">Published · 2026</span>
+          </p>
+          <h1>
+            Mellophanerognosis<br /><em>&amp; the Mellognostic Engram</em>
+          </h1>
+          <p class="lede">
+            A vocabulary for investigating what present reasoning can learn from
+            <em>models of possible futures</em>—while keeping uncertainty,
+            evidence, and causation in view.
+          </p>
+          <p>
+            <a href="https://doi.org/10.5281/zenodo.24035234"
+              >Read the published monograph on Zenodo</a
+            >
+            ·
+            <a href="https://orcid.org/0009-0003-1812-0895"
+              >Research record on ORCID</a
+            >
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner split">
+          <div>
+            <p class="label">The basic question</p>
+            <h2>
+              Can a possible future make a present question more rigorous?
+            </h2>
+          </div>
+          <div>
+            <p>
+              We already plan, forecast, simulate, and imagine alternatives.
+              This monograph asks what happens when those represented futures
+              become objects of further reasoning: compared for shared
+              prerequisites, tested for constraints, or examined for where their
+              paths diverge.
+            </p>
+            <p>
+              It proposes a name for that organization of reasoning—not a claim
+              that a future has been observed, predicted with certainty, or sent
+              information backwards in time.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner">
+          <p class="statement">
+            A future model does not reveal the future. It can make the
+            implications of our present assumptions easier to inspect.
+          </p>
+          <p class="note">
+            <strong>Quick read:</strong> instead of treating a forecast as an
+            answer, examine several possible outcomes together. Their common
+            requirements, tensions, and open questions can become useful
+            material for present inquiry.
+          </p>
+        </div>
+      </section>
+      <section class="section flow">
+        <div class="inner">
+          <div class="flow-head">
+            <p class="label">The proposed reasoning cycle</p>
+            <h2>
+              From present information to a more accountable next question.
+            </h2>
+            <p>
+              This is the book's central organization. Each stage stays distinct
+              so a reader can ask where an inference came from, what it relies
+              on, and what later evidence would change it.
+            </p>
+          </div>
+          <figure class="figure">
+            <img src="mellophanerognosis-flow.svg" alt="Diagram of prospective inference: present information creates a set of possible future models; comparing them produces candidate content which returns to present reasoning for evaluation." />
+            <figcaption>The modeled futures are generated and compared in the present. The arrow at the bottom is the passage of time; the return loop is an update to present reasoning, not a time arrow.</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner">
+          <p class="label">Two proposed terms</p>
+          <div class="cards">
+            <article>
+              <span class="card-label">Mellophanerognosis</span>
+              <h3>Reasoning <em>over</em> prospective representations.</h3>
+              <p>
+                The proposed term for the inferential process in which possible
+                future states are treated as an informational domain. It focuses
+                on what can be drawn from their relationships and structure
+                before the relevant horizon is encountered.
+              </p>
+              <p>
+                The result is candidate epistemic content: potentially useful,
+                but still open to evaluation, correction, or rejection.
+              </p>
+            </article>
+            <article>
+              <span class="card-label">Mellognostic engram</span>
+              <h3>A trace with a prospective provenance.</h3>
+              <p>
+                The proposed term for a persistent cognitive or informational
+                trace of content derived through this process and retained
+                before the circumstance to which it relates has been experienced
+                or evaluated.
+              </p>
+              <p>
+                Its existence does not imply that the represented circumstance
+                will occur. It creates a responsibility to track provenance and
+                later compare the trace with what actually happened.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner split">
+          <div>
+            <p class="label">Why the distinction matters</p>
+            <h2>Prediction can change the thing it is about.</h2>
+          </div>
+          <div>
+            <p>
+              If prospectively derived content influences action, it can help
+              bring about, alter, or prevent an outcome. The book calls for
+              <strong>mellognostic reconciliation</strong>: separating what a
+              trace anticipated from what subsequent actions may have caused.
+            </p>
+            <p>
+              This matters in ordinary planning as much as in more ambitious
+              systems. A good account does not merely celebrate a hit; it
+              records assumptions, alternatives, interventions, uncertainty, and
+              the later evidence.
+            </p>
+          </div>
+        </div>
+        <figure class="inner figure reconciliation">
+          <img src="mellognostic-reconciliation.svg" alt="Diagram of causal reconciliation: a prospective trace informs intervention, which affects a later outcome, so evaluation distinguishes anticipation from influence." />
+          <figcaption>“Reconciliation” is the book’s answer to a deceptively hard question: when an insight informs an action, how do we distinguish a genuine anticipation from an outcome the action helped create?</figcaption>
+        </figure>
+      </section>
+      <section class="section boundaries">
+        <div class="inner">
+          <p class="label">Claim boundary</p>
+          <h2>What this monograph does not say.</h2>
+          <ul>
+            <li>
+              precognition, prophecy, or information arriving from an
+              already-realized future
+            </li>
+            <li>
+              retrocausality or a replacement for evidence gathered from the
+              world
+            </li>
+            <li>
+              that prospective content is automatically knowledge, correct, or
+              warranted
+            </li>
+            <li>
+              that any particular cognitive or artificial system already
+              implements the proposed framework
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section record">
+        <div class="inner">
+          <p class="label">Publication record</p>
+          <h2>The full formal treatment, examples, and proposed criteria.</h2>
+          <dl>
+            <dt>Title</dt>
+            <dd>
+              <em
+                >Mellophanerognosis and the Mellognostic Engram: The Epistemics
+                of Reasoning From Possible Futures</em
+              >
+            </dd>
+            <dt>Author</dt>
+            <dd>Nigel Patch (Nigelæn)</dd>
+            <dt>Type</dt>
+            <dd>First Edition theoretical monograph · 194 pages</dd>
+            <dt>Published</dt>
+            <dd>7 November 2026</dd>
+            <dt>DOI</dt>
+            <dd>
+              <a href="https://doi.org/10.5281/zenodo.24035234"
+                >10.5281/zenodo.24035234</a
+              >
+            </dd>
+            <dt>License</dt>
+            <dd>CC BY-NC-ND 4.0</dd>
+          </dl>
+          <p>
+            <a href="https://zenodo.org/records/24035234"
+              >Read or download via Zenodo</a
+            >
+            ·
+            <a href="https://orcid.org/0009-0003-1812-0895"
+              >View ORCID record</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2026 Nigel Patch · Nigelæn Research ·
+      <a href="https://doi.org/10.5281/zenodo.24035234">Published monograph</a>
+    </footer>
+  </body>
+</html>

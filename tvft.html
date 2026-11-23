@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="TVFT — Time-Void Field Theory, a fourteen-volume theoretical physics program by Nigel Patch."
+    />
+    <title>TVFT — Nigelæn Research</title>
+    <style>
+      :root {
+        --ink: #17201e;
+        --paper: #f2f0e8;
+        --lime: #d7fb64;
+        --clay: #dc6c4f;
+        --violet: #c9bdf2;
+        --line: #aaa99f;
+        --serif: Georgia, serif;
+        --sans: Arial, sans-serif;
+        --mono: "Courier New", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 17px/1.62 var(--sans);
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 5px;
+      }
+      .head {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17px 6vw;
+        background: #f2f0e8ef;
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(8px);
+      }
+      .brand {
+        font: 700 11px/1.1 var(--mono);
+        letter-spacing: 0.11em;
+        text-decoration: none;
+      }
+      .brand b {
+        display: inline-grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        border: 1px solid;
+        border-radius: 50%;
+        font: italic 22px var(--serif);
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        font: 11px var(--mono);
+        text-transform: uppercase;
+      }
+      .hero,
+      .section {
+        padding: clamp(4rem, 9vw, 9rem) max(6vw, 24px);
+      }
+      .inner {
+        max-width: 1160px;
+        margin: auto;
+      }
+      .label,
+      .tag {
+        font: 11px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .tag {
+        display: inline-block;
+        border: 1px solid currentColor;
+        border-radius: 20px;
+        padding: 4px 9px;
+        margin-left: 8px;
+      }
+      .hero {
+        min-height: 78vh;
+        background: var(--ink);
+        color: var(--paper);
+        display: grid;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "TVFT";
+        position: absolute;
+        right: -0.06em;
+        bottom: -0.26em;
+        font: italic clamp(13rem, 40vw, 41rem)/1 var(--serif);
+        color: #d7fb6411;
+      }
+      .hero .inner {
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        letter-spacing: -0.055em;
+      }
+      .hero h1 {
+        font-size: clamp(5rem, 14vw, 12rem);
+        line-height: 0.75;
+        margin: 42px 0 31px;
+      }
+      .hero h1 em {
+        color: var(--lime);
+      }
+      .lede {
+        max-width: 850px;
+        font: clamp(1.4rem, 2.9vw, 2.7rem)/1.13 var(--serif);
+      }
+      h2 {
+        font-size: clamp(2.7rem, 6vw, 5.6rem);
+        line-height: 0.88;
+        margin: 12px 0 22px;
+      }
+      h3 {
+        font-size: clamp(1.75rem, 3vw, 2.9rem);
+        line-height: 0.94;
+        margin: 45px 0 15px;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(35px, 8vw, 110px);
+      }
+      .translation {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .translation article { padding: 27px; background: var(--paper); min-height: 285px; }
+      .translation article:nth-child(2), .translation article:nth-child(3) { background: #e3ddd0; }
+      .translation h3 { margin: 40px 0 13px; font-size: clamp(1.55rem, 2.5vw, 2.45rem); }
+      .translation p { margin: 0; font-size: .94rem; }
+      .statement {
+        padding: clamp(28px, 5vw, 65px);
+        background: var(--lime);
+        font: clamp(1.7rem, 3.5vw, 3.45rem)/1.1 var(--serif);
+        letter-spacing: -0.04em;
+      }
+      .call {
+        border-left: 3px solid var(--clay);
+        padding-left: 18px;
+        max-width: 770px;
+      }
+      .claim-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        margin-top: 48px;
+        background: var(--ink);
+        border: 1px solid var(--ink);
+      }
+      .claim-grid article {
+        min-height: 240px;
+        padding: 22px;
+        background: var(--paper);
+      }
+      .claim-grid article:nth-child(2), .claim-grid article:nth-child(4) { background: var(--violet); }
+      .claim-grid h3 { margin: 38px 0 12px; font-size: clamp(1.45rem,2.2vw,2.2rem); }
+      .claim-grid p { margin: 0; font-size: .9rem; }
+      .route {
+        background: #e3ddd0;
+      }
+      .route-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        background: var(--ink);
+        border: 1px solid var(--ink);
+      }
+      .route-grid article {
+        padding: 25px;
+        background: var(--paper);
+        min-height: 355px;
+        display: flex;
+        flex-direction: column;
+      }
+      .route-grid article:nth-child(2),
+      .route-grid article:nth-child(4) {
+        background: var(--violet);
+      }
+      .route-grid article:nth-child(5) {
+        background: var(--lime);
+      }
+      .route-grid h3 {
+        font-size: clamp(1.55rem, 2.6vw, 2.5rem);
+        margin-top: auto;
+      }
+      .route-grid p {
+        font-size: 0.92rem;
+        margin: 0;
+      }
+      .no {
+        font: 11px var(--mono);
+        letter-spacing: 0.1em;
+      }
+      .domains {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .domains .inner {
+        max-width: 1250px;
+      }
+      .bands {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 1px;
+        background: #f2f0e855;
+      }
+      .bands article {
+        padding: 36px;
+        background: #223029;
+      }
+      .bands article:last-child {
+        background: #384059;
+      }
+      .bands h3 {
+        margin: 42px 0 15px;
+      }
+      .bands ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .bands li {
+        border-top: 1px solid #fff4;
+        padding: 15px 0;
+        font: clamp(1.1rem, 1.8vw, 1.5rem)/1.15 var(--serif);
+      }
+      .limits {
+        background: #ece0dc;
+      }
+      .limits ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid;
+      }
+      .limits li {
+        padding: 22px 0;
+        border-bottom: 1px solid;
+        font: clamp(1.15rem, 2.1vw, 1.8rem)/1.16 var(--serif);
+      }
+      .limits li:before {
+        content: "Does not establish ";
+        font: 11px var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9a4334;
+        margin-right: 15px;
+      }
+      .record {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .record a {
+        color: var(--lime);
+      }
+      .books {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: #ffffff44;
+        border: 1px solid #ffffff44;
+      }
+      .books article {
+        padding: 25px;
+        background: #1f2b25;
+      }
+      .books p {
+        margin: 0.45rem 0 0;
+      }
+      .isbn {
+        font: 12px var(--mono);
+        color: var(--lime);
+      }
+      footer {
+        padding: 28px 6vw;
+        background: var(--clay);
+        font: 12px var(--mono);
+      }
+      @media (max-width: 820px) {
+        nav {
+          display: none;
+        }
+        .hero {
+          min-height: 650px;
+        }
+        .split,
+        .bands,
+        .books {
+          grid-template-columns: 1fr;
+        }
+        .translation { grid-template-columns: 1fr; }
+        .route-grid {
+          grid-template-columns: 1fr;
+        }
+        .claim-grid { grid-template-columns: 1fr; }
+        .route-grid article {
+          min-height: 230px;
+        }
+        .hero,
+        .section {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <a class="brand" href="index.html"><b>N</b>NIGELÆN<br />RESEARCH</a>
+      <nav>
+        <a href="index.html#publications">Publications</a
+        ><a href="https://orcid.org/0009-0003-1812-0895">ORCID</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="inner">
+          <p class="label">
+            Independent theoretical-physics program
+            <span class="tag">Published books · author-proposed</span>
+          </p>
+          <h1><em>TVFT</em><br />Time-Void<br />Field Theory</h1>
+          <p class="lede">
+            A fourteen-volume attempt to ask whether temporal structure can
+            supply a unified language for problems spanning quantum theory,
+            gravity, matter, collapse, and cosmology.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner split">
+          <div>
+            <p class="label">What this is</p>
+            <h2>A source-to-observable theoretical architecture.</h2>
+          </div>
+          <div>
+            <p>
+              TVFT is Nigel Patch’s independently authored theoretical-physics
+              program. It begins from a proposed temporal source structure,
+              introduces directed temporal fields, induced phase and reduction
+              language, then follows the resulting architecture toward
+              collapse-compatible observable dynamics and matter-bearing
+              structure.
+            </p>
+            <p>
+              The later volumes then ask whether this proposed architecture can
+              be put into matrix and operator form, recover familiar structures
+              in controlled regimes, and generate disciplined diagnostic or
+              test-facing questions. “Theory of everything” describes the
+              program’s target, not an established result.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner">
+          <p class="label">Plain-English orientation</p>
+          <h2>A reader’s aid, not the formal definition.</h2>
+          <p class="call"><strong>For readers new to the vocabulary:</strong> this section translates the program’s terms into ordinary language. It simplifies the formal account for orientation only; the published books define the theory’s objects, assumptions, and claims precisely.</p>
+          <div class="translation">
+            <article><span class="no">STARTING LAYER</span><h3>Temporal source structure</h3><p>The framework’s proposed deepest bookkeeping layer: a way to describe temporal organization before starting with the ordinary visible world. It is a theoretical starting point, not an observed object.</p></article>
+            <article><span class="no">MATHEMATICAL LANGUAGE</span><h3>Directed temporal fields</h3><p>A proposed way of writing down how temporal relations, directions, and changes are organized. “Field” here means a mathematical description spread across a system, not a confirmed new physical field.</p></article>
+            <article><span class="no">GETTING TO THE FAMILIAR</span><h3>Reduction &amp; realization</h3><p>“Reduction” asks how a deeper description could appear as a familiar one at the scale we observe. “Matter realization” is TVFT’s proposed account of how stable, observable material structure might emerge.</p></article>
+            <article><span class="no">HOW IT EARNS SCRUTINY</span><h3>Operators, recovery &amp; tests</h3><p>Matrices and operators are tools for making the proposal calculable. “Recovery” means checking whether known physics appears in a defined regime; it does not mean that known physics has been replaced. A diagnostic pathway names what later data would need to decide.</p></article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner">
+          <p class="statement">
+            The portfolio record is not asking visitors to accept TVFT. It is
+            asking them to see the scale, structure, and testability ambitions
+            of the written program.
+          </p>
+          <p class="call">
+            <strong>Quick read:</strong> Book I develops the source,
+            reduction, collapse/matter, and operator arcs. Book II tests the
+            architecture against familiar physics, then extends it toward
+            geometry, boundary, information, diagnostic, and cosmological
+            questions.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner">
+          <p class="label">Claim-status discipline</p>
+          <h2>Not every statement in the program carries the same weight.</h2>
+          <p class="call">Book II explicitly separates the following kinds of statements. That distinction is part of the research method: a formal definition is not a physical observation, and a conditional derivation is not an experimental confirmation.</p>
+          <div class="claim-grid">
+            <article><span class="no">01</span><h3>Accepted-physics recovery</h3><p>Shows how an established mathematical structure may be recovered in a stated regime.</p></article>
+            <article><span class="no">02</span><h3>TVFT definition</h3><p>Introduces a proposed object, map, variable, or relation internal to the framework.</p></article>
+            <article><span class="no">03</span><h3>Conditional derivation</h3><p>Follows under the assumptions and controlled conditions written in the relevant section.</p></article>
+            <article><span class="no">04</span><h3>Interpretive bridge</h3><p>Offers a proposed reading that relates the framework to an established physical concept.</p></article>
+            <article><span class="no">05</span><h3>Diagnostic pathway</h3><p>Specifies what a future comparison, simulation, observation, or measurement would need to evaluate.</p></article>
+          </div>
+        </div>
+      </section>
+      <section class="section route">
+        <div class="inner">
+          <p class="label">A reader’s route through the published program</p>
+          <h2>Five split books. Fourteen volumes.</h2>
+          <div class="route-grid">
+            <article>
+              <span class="no">Book I · Part One<br />Volumes 1–3</span>
+              <h3>Foundations</h3>
+              <p>
+                Temporal source structure, directed temporal-field decomposition,
+                induced phase and reduction language, then a proposed
+                collapse–matter-realization arc.
+              </p>
+            </article>
+            <article>
+              <span class="no">Book I · Part Two<br />Volumes 4–6</span>
+              <h3>Formal machinery</h3>
+              <p>
+                Finite-dimensional block states and operators, collapse-compatible
+                dynamics, then generalized operator, relativistic, Bell-type,
+                and boundary-condition discipline.
+              </p>
+            </article>
+            <article>
+              <span class="no">Book II · Part One<br />Volumes 7–8</span>
+              <h3>Physics interfaces</h3>
+              <p>
+                Potential → action → phase → interference, then proposed
+                gauge-sector, particle-family, and matter-persistence bridges.
+              </p>
+            </article>
+            <article>
+              <span class="no">Book II · Part Two<br />Volumes 9–11</span>
+              <h3>Correlation &amp; boundary</h3>
+              <p>
+                Vacuum correlation and effective geometry, a proposed
+                observable-resolution boundary, then collapse-history and
+                non-Markovian-memory diagnostic variables.
+              </p>
+            </article>
+            <article>
+              <span class="no">Book II · Part Three<br />Volumes 12–14</span>
+              <h3>Diagnostics &amp; closure</h3>
+              <p>
+                Diagnostic feature vectors and decoder comparisons, boundary and
+                horizon-facing information questions, then cosmological signatures
+                and controlled Book II closure.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section domains">
+        <div class="inner">
+          <p class="label">How the program is organized</p>
+          <div class="bands">
+            <article>
+              <h3>From formal proposal to physical question.</h3>
+              <p>
+                TVFT works across formal and interpretive layers rather than
+                presenting one isolated hypothesis. The publications move
+                between mathematical objects, proposed relationships, and
+                questions about whether a framework can recover or constrain
+                familiar physical descriptions.
+              </p>
+              <p>
+                This is why the program is best read as a connected research
+                architecture, not as a short claim that can be judged from a
+                single slogan.
+              </p>
+            </article>
+            <article>
+              <h3>Recurring terrain</h3>
+              <ul>
+                <li>Time, proper time, and temporal structure</li>
+                <li>Field, phase, and potential formulations</li>
+                <li>Operators, matrices, and collapse dynamics</li>
+                <li>Quantum correlation, information, and geometry</li>
+                <li>
+                  Boundary, horizon, black-hole, and cosmological questions
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section limits">
+        <div class="inner">
+          <p class="label">Research-status boundary</p>
+          <h2>Ambitious theory is not settled physics.</h2>
+          <ul>
+            <li>
+              a peer-reviewed consensus theory of gravity, quantum mechanics,
+              matter, or cosmology
+            </li>
+            <li>
+              experimental validation, independent replication, or accepted
+              replacement of established physical theories
+            </li>
+            <li>
+              that mathematical formalization alone demonstrates physical truth
+            </li>
+            <li>
+              that the project’s explanatory ambition has already been achieved
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section record">
+        <div class="inner">
+          <p class="label">Publication record</p>
+          <h2>Five first Amazon split editions, 2026.</h2>
+          <div class="books">
+            <article>
+              <b>Book I · Part One</b>
+              <p>Foundations of the Unified Potential Field</p>
+              <p class="isbn">ISBN 979-8-1990834-3-0</p>
+            </article>
+            <article>
+              <b>Book I · Part Two</b>
+              <p>
+                Matrix and Operator Derivations, Relativistic Sharpening, and
+                Terminal Closure
+              </p>
+              <p class="isbn">ISBN 9798180530073</p>
+            </article>
+            <article>
+              <b>Book II · Part One</b>
+              <p>
+                Potential, Phase, Gauge Sectors, and Matter-Bearing Persistence
+              </p>
+              <p class="isbn">ISBN 9798180808448</p>
+            </article>
+            <article>
+              <b>Book II · Part Two</b>
+              <p>
+                Vacuum Entanglement, Planck-Boundary Structure, and
+                Collapse-History Dynamics
+              </p>
+              <p class="isbn">ISBN 9798180838933</p>
+            </article>
+            <article>
+              <b>Book II · Part Three</b>
+              <p>
+                Quantum Error Correction, Boundary Signatures, and Cosmological
+                Recombination
+              </p>
+              <p class="isbn">ISBN 9798180849458</p>
+            </article>
+          </div>
+          <p>
+            <a href="https://orcid.org/0009-0003-1812-0895"
+              >View Nigel Patch’s ORCID record</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2026 Nigel Patch · Nigelæn Research · TVFT is presented as
+      author-proposed theoretical research.
+    </footer>
+  </body>
+</html>

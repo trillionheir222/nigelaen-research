@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
+  <title id="title">Mellognostic reconciliation</title>
+  <desc id="desc">A causal reconciliation diagram showing a prospective trace, action, later outcome, and an evaluation that separates anticipation from influence.</desc>
+  <style>
+    .paper{fill:#f4f2ea}.ink{fill:#13202d}.line{stroke:#13202d;stroke-width:3;fill:none}.dash{stroke:#13202d;stroke-width:2;fill:none;stroke-dasharray:8 9;opacity:.65}.box{fill:#f4f2ea;stroke:#13202d;stroke-width:2}.violet{fill:#d5c4ff;stroke:#13202d;stroke-width:2}.coral{fill:#ef745d;stroke:#13202d;stroke-width:2}.label{font:600 16px Arial,sans-serif;letter-spacing:2px}.head{font:400 31px Georgia,serif}.body{font:400 18px Arial,sans-serif}.mono{font:600 14px 'Courier New',monospace;letter-spacing:1.2px}
+  </style>
+  <rect class="paper" width="1400" height="780" rx="4"/>
+  <text x="75" y="76" class="label" fill="#5b478c">CAUSAL RECONCILIATION</text>
+  <text x="75" y="124" class="head ink">A good evaluation separates anticipation from influence.</text>
+  <text x="75" y="156" class="body ink">If an insight changes an action, the action may change the later outcome it was intended to anticipate.</text>
+  <line x1="125" y1="390" x2="1270" y2="390" class="line"/><path d="M1270 390 L1250 378 L1250 402 Z" class="ink"/>
+  <text x="120" y="430" class="mono ink">NOW</text><text x="715" y="430" class="mono ink">TIME FLOWS FORWARD</text>
+  <circle cx="230" cy="390" r="13" class="ink"/><rect x="115" y="230" width="270" height="115" rx="12" class="box"/>
+  <text x="142" y="263" class="mono" fill="#5b478c">01 · PROSPECTIVE TRACE</text><text x="142" y="303" class="head ink">A retained insight</text><text x="142" y="328" class="body ink">with recorded provenance</text>
+  <path d="M385 287 C480 287 470 390 535 390" class="line"/><path d="M523 378 L535 390 L523 402" class="line"/>
+  <circle cx="550" cy="390" r="13" class="ink"/><rect x="440" y="470" width="230" height="115" rx="12" class="violet"/>
+  <text x="467" y="503" class="mono ink">02 · INTERVENTION</text><text x="467" y="543" class="head ink">Action changes</text><text x="467" y="568" class="body ink">the evolving situation</text>
+  <path d="M550 403 C550 438 555 450 555 470" class="line"/><path d="M543 458 L555 470 L567 458" class="line"/>
+  <circle cx="890" cy="390" r="13" class="ink"/><rect x="765" y="230" width="250" height="115" rx="12" class="coral"/>
+  <text x="792" y="263" class="mono ink">03 · OBSERVATION</text><text x="792" y="303" class="head ink">Later outcome</text><text x="792" y="328" class="body ink">and new evidence</text>
+  <path d="M670 528 C825 528 760 402 877 390" class="line"/><path d="M865 378 L877 390 L865 402" class="line"/>
+  <rect x="1045" y="465" width="270" height="230" rx="12" fill="#13202d"/>
+  <text x="1073" y="502" class="mono" fill="#a9dfe8">04 · RECONCILE</text><text x="1073" y="547" class="head paper">Ask two</text><text x="1073" y="583" class="head paper">questions:</text>
+  <text x="1073" y="624" class="body paper">What was anticipated?</text><text x="1073" y="658" class="body paper">What was influenced?</text>
+  <path d="M1015 287 H1030 V505 H1045" class="dash"/><path d="M1033 493 L1045 505 L1033 517" class="dash"/>
+  <path d="M1015 390 H1030 V590 H1045" class="dash"/><path d="M1033 578 L1045 590 L1033 602" class="dash"/>
+  <text x="75" y="725" class="mono" fill="#5b478c">THE GOAL IS NOT A SELF-CONGRATULATING "HIT."</text>
+  <text x="75" y="755" class="mono" fill="#5b478c">THE GOAL IS A MORE AUDITABLE ACCOUNT OF WHAT HAPPENED.</text>
+</svg>
