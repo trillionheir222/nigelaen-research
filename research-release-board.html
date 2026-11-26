@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Public documentation and disclosure map for Nigelæn Research."
+    />
+    <title>Research Release Board — Nigelæn Research</title>
+    <style>
+      :root {
+        --ink: #17201e;
+        --paper: #f2f0e8;
+        --lime: #d7fb64;
+        --clay: #dc6c4f;
+        --violet: #c9bdf2;
+        --blue: #cce8ed;
+        --line: #aaa99f;
+        --serif: Georgia, serif;
+        --sans: Arial, sans-serif;
+        --mono: "Courier New", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 16px/1.55 var(--sans);
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 5px;
+      }
+      .head {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 6vw;
+        background: #f2f0e8ef;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        font: 700 11px/1.1 var(--mono);
+        letter-spacing: 0.11em;
+        text-decoration: none;
+      }
+      .brand b {
+        display: inline-grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        border: 1px solid;
+        border-radius: 50%;
+        font: italic 22px var(--serif);
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        font: 11px var(--mono);
+        text-transform: uppercase;
+      }
+      .hero,
+      .section {
+        padding: clamp(4rem, 9vw, 9rem) max(6vw, 24px);
+      }
+      .inner {
+        max-width: 1220px;
+        margin: auto;
+      }
+      .label,
+      .tag,
+      .status {
+        font: 11px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .hero {
+        background: var(--ink);
+        color: var(--paper);
+        min-height: 64vh;
+        display: grid;
+        align-items: center;
+      }
+      .hero h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        letter-spacing: -0.055em;
+      }
+      .hero h1 {
+        font-size: clamp(4rem, 10vw, 9rem);
+        line-height: 0.78;
+        margin: 38px 0 25px;
+      }
+      .hero h1 em,
+      .record a {
+        color: var(--lime);
+      }
+      .lede {
+        max-width: 850px;
+        font: clamp(1.35rem, 2.7vw, 2.45rem)/1.15 var(--serif);
+      }
+      h2 {
+        font-size: clamp(2.6rem, 5.5vw, 5.2rem);
+        line-height: 0.9;
+        margin: 12px 0 25px;
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+      }
+      .note {
+        border-left: 3px solid var(--clay);
+        padding-left: 18px;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .legend {
+        margin-top: 30px;
+      }
+      .key {
+        border: 1px solid;
+        border-radius: 24px;
+        padding: 7px 10px;
+        font-size: 0.82rem;
+      }
+      .dot,
+      .marker {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--ink);
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      .dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+      }
+      .p,
+      .on {
+        background: var(--lime);
+      }
+      .i,
+      .test {
+        background: var(--blue);
+      }
+      .a,
+      .active {
+        background: var(--violet);
+      }
+      .x,
+      .lock {
+        background: #edc7bd;
+      }
+      .n,
+      .next {
+        background: #e6e0c4;
+      }
+      .blank {
+        background: var(--paper);
+      }
+      .board {
+        padding: 0 6vw 8vw;
+      }
+      .board-inner {
+        max-width: 1220px;
+        margin: auto;
+        border: 1px solid var(--line);
+      }
+      .row {
+        display: grid;
+        grid-template-columns: minmax(225px, 1.1fr) minmax(230px, 1.5fr) 210px;
+        border-bottom: 1px solid var(--line);
+      }
+      .row:last-child {
+        border: 0;
+      }
+      .row > div {
+        padding: 25px;
+        border-right: 1px solid var(--line);
+      }
+      .row > div:last-child {
+        border: 0;
+      }
+      .row h3 {
+        font: clamp(1.5rem, 2.4vw, 2.45rem)/0.92 var(--serif);
+        letter-spacing: -0.05em;
+        margin: 28px 0 6px;
+      }
+      .row p {
+        margin: 0;
+      }
+      .status-cell {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .status-cell .marker {
+        flex: 0 0 auto;
+        margin: 0;
+      }
+      .tag {
+        display: inline-block;
+        border: 1px solid;
+        border-radius: 20px;
+        padding: 4px 8px;
+      }
+      .published {
+        background: var(--lime);
+      }
+      .implemented {
+        background: var(--blue);
+      }
+      .research {
+        background: var(--violet);
+      }
+      .protected {
+        background: #ece0dc;
+      }
+      .planned {
+        background: #e6e0c4;
+      }
+      .archived {
+        background: #d8d6ce;
+      }
+      .footnote {
+        background: #e3ddd0;
+      }
+      .record {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      footer {
+        padding: 26px 6vw;
+        background: var(--clay);
+        font: 12px var(--mono);
+      }
+      @media (max-width: 820px) {
+        nav {
+          display: none;
+        }
+        .intro,
+        .row {
+          grid-template-columns: 1fr;
+        }
+        .row > div {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .row > div:last-child {
+          border-bottom: 0;
+        }
+        .hero,
+        .section,
+        .board {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <a class="brand" href="index.html"><b>N</b>NIGELÆN<br />RESEARCH</a>
+      <nav>
+        <a href="index.html#publications">Publications</a
+        ><a href="index.html#programs">Programs</a
+        ><a href="https://orcid.org/0009-0003-1812-0895">ORCID</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="inner">
+          <p class="label">Public documentation map</p>
+          <h1>Research<br /><em>Release Board</em></h1>
+          <p class="lede">
+            A living map of what this archive can responsibly show today—what is
+            published, what is implemented, what is developing, and what remains
+            deliberately protected.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="inner intro">
+          <div>
+            <p class="label">How to read this board</p>
+            <h2>Documentation is not a claim meter.</h2>
+          </div>
+          <div>
+            <p>
+              The board records public visibility and disclosure maturity. It
+              does <strong>not</strong> measure scientific truth, technical
+              readiness, commercial availability, or the value of confidential
+              work.
+            </p>
+            <p class="note">
+              <strong>One square, one status:</strong> each row uses a single
+              colored square beside its label. A protected entry is complete
+              when it is responsibly bounded—not when it reveals more.
+            </p>
+            <div class="legend">
+              <span class="key"><i class="dot p"></i>Published</span
+              ><span class="key"
+                ><i class="dot i"></i>Implemented / bounded test</span
+              ><span class="key"><i class="dot a"></i>Active research</span
+              ><span class="key"><i class="dot x"></i>Protected</span
+              ><span class="key"
+                ><i class="dot blank"></i>Planned / archival</span
+              >
+            </div>
+            <p class="note">
+              <strong>This is a documentation map:</strong> the colored square
+              identifies the public posture of the work, not its scientific
+              validation, technical readiness, or commercial maturity.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="board">
+        <div class="board-inner">
+          <article class="row">
+            <div>
+              <span class="tag published">Published</span>
+              <h3><a href="tvft.html">TVFT</a></h3>
+              <p>Fourteen-volume theoretical-physics publication program.</p>
+            </div>
+            <div>
+              <p>
+                Public book record, reader route, claim-status framing, and
+                bibliographic detail are available.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker on" aria-hidden="true"></i
+              ><span class="status">Theoretical publication</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag published">Published</span>
+              <h3><a href="mellophanerognosis.html">Mellophanerognosis</a></h3>
+              <p>
+                Terminology monograph on prospective inference and prospective
+                traces.
+              </p>
+            </div>
+            <div>
+              <p>
+                Public description, Zenodo record, explanatory diagrams, and
+                explicit epistemic boundaries are available.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker on" aria-hidden="true"></i
+              ><span class="status">Theoretical monograph</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag published">Published</span>
+              <h3>
+                <a href="grammar-of-emergence.html">Grammar of Emergence</a>
+              </h3>
+              <p>
+                Illustrated research atlas of primitives, structures, and
+                meta-architectures.
+              </p>
+            </div>
+            <div>
+              <p>
+                Public monograph, visual instruments, reading guidance, and a
+                stated non-universality boundary are available.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker on" aria-hidden="true"></i
+              ><span class="status">Research atlas</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag research">Active research</span>
+              <h3><a href="morphaematics.html">Morphæmatics</a></h3>
+              <p>
+                Developing formal language and notation family for semantic and
+                relational structure.
+              </p>
+            </div>
+            <div>
+              <p>
+                A public orientation exists; the internal notation, proofs, and
+                formal system remain in development and confidential.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker active" aria-hidden="true"></i
+              ><span class="status">Framework in development</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag implemented">Implemented / bounded test</span>
+              <h3><a href="prismaeon.html">Prismæon™</a></h3>
+              <p>
+                Governed adaptive-compute architecture with FPGA-backed
+                reference work.
+              </p>
+            </div>
+            <div>
+              <p>
+                The public profile documents bounded physical testing while
+                withholding proprietary architecture and source code.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker test" aria-hidden="true"></i
+              ><span class="status">Public technical profile</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag research">Active research</span>
+              <h3>Intelligence as Flow</h3>
+              <p>
+                Developing language for cognition as movement through
+                constraints, pathways, bottlenecks, transfer, and coherence.
+              </p>
+            </div>
+            <div>
+              <p>
+                A public profile follows a publication-ready document. Until
+                then, it remains a high-level research direction rather than a
+                released theory.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker active" aria-hidden="true"></i
+              ><span class="status">Writing in preparation</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag protected">Protected</span>
+              <h3>Foundational physics research</h3>
+              <p>
+                Private inquiry across theoretical physics and relational
+                research.
+              </p>
+            </div>
+            <div>
+              <p>
+                Questions, methods, models, results, and technical vocabulary
+                are intentionally withheld while disclosure and IP strategy are
+                evaluated.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker lock" aria-hidden="true"></i
+              ><span class="status">Protected research</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag protected">Protected</span>
+              <h3>Confidential cognitive systems R&amp;D</h3>
+              <p>Private computational and systems research.</p>
+            </div>
+            <div>
+              <p>
+                System names, architectures, agent roles, memory design,
+                implementation details, and results are deliberately not public.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker lock" aria-hidden="true"></i
+              ><span class="status">Private R&amp;D</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag protected">Protected categories</span>
+              <h3>Invention Atlas</h3>
+              <p>
+                Approximately 270 conceptual invention entries across multiple
+                technology families.
+              </p>
+            </div>
+            <div>
+              <p>
+                Only broad public categories will be released. Individual
+                inventions, mechanisms, patent strategy, and unpublished designs
+                remain private.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker lock" aria-hidden="true"></i
+              ><span class="status">Public-safe index planned</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag research">Active research</span>
+              <h3>FrankenLab</h3>
+              <p>
+                Proposed environment for exploratory work with unconventional
+                computational substrates and instruments.
+              </p>
+            </div>
+            <div>
+              <p>
+                Public treatment stays at the level of research direction and
+                laboratory intent while the work develops and is made safe to
+                document.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker active" aria-hidden="true"></i
+              ><span class="status">Research direction in development</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Planned</span>
+              <h3>ASEP</h3>
+              <p>Advanced Symbiotic Enhancements and Protections.</p>
+            </div>
+            <div>
+              <p>
+                Future human-technology research program. Public detail follows
+                only after its scope, safety posture, and disclosure boundaries
+                are settled.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Future program</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag archived">Archived experiment</span>
+              <h3>NigelOS</h3>
+              <p>Early exploratory role-based agent-systems experiment.</p>
+            </div>
+            <div>
+              <p>
+                It did not become a durable product. It remains relevant as part
+                of the lineage that informed later questions about
+                orchestration, role separation, memory, constraints, and
+                research workflow.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker archived" aria-hidden="true"></i
+              ><span class="status">Historical context</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag published">Documented</span>
+              <h3>Research Release Board</h3>
+              <p>
+                Public map of this portfolio's documentation and disclosure
+                posture.
+              </p>
+            </div>
+            <div>
+              <p>
+                The board is intentionally self-describing: it gives visitors a
+                compact route through the archive without treating visibility as
+                evidence of validation or readiness.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker on" aria-hidden="true"></i
+              ><span class="status">Current public map</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Next portfolio layer</span>
+              <h3>Publication Gallery</h3>
+              <p>
+                Covers, citation information, verified links, and reader
+                guidance.
+              </p>
+            </div>
+            <div>
+              <p>
+                A single navigable gallery will gather the existing books and
+                monographs with DOI, Zenodo, ISBN, edition, and citation detail
+                where verified.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Planned</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Next portfolio layer</span>
+              <h3>About &amp; Timeline</h3>
+              <p>
+                Professional account of the research trajectory and present
+                direction.
+              </p>
+            </div>
+            <div>
+              <p>
+                This page will use a visual timeline with labeled callouts,
+                followed by short explanations of each milestone and its
+                relevance to the larger body of work.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Planned</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Curated release</span>
+              <h3>Creative &amp; Educational Practice</h3>
+              <p>
+                Public-ready writing, visual work, composition, publishing
+                practice, and learning materials.
+              </p>
+            </div>
+            <div>
+              <p>
+                A selective hub—not a catch-all archive—will frame creative work
+                alongside research without overstating unfinished projects or
+                presenting study materials as original scholarship.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Planned</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag research">Active manuscript</span>
+              <h3>The Things We Need</h3>
+              <p>Science-fiction book and future adaptation pathway.</p>
+            </div>
+            <div>
+              <p>
+                The manuscript is written and currently being edited for public
+                release. A future profile can introduce it through an approved
+                premise and selected related material; a screenplay or film path
+                stays separate until it is ready.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker active" aria-hidden="true"></i
+              ><span class="status">Editing for public release</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Curated release</span>
+              <h3>Selected Art &amp; Available Works</h3>
+              <p>
+                Research-adjacent visual and geometric work, with a separate
+                collection route when ready.
+              </p>
+            </div>
+            <div>
+              <p>
+                Selected pieces may appear as part of the biography. A distinct
+                availability page can link to the Penthouse Collection or a
+                sales channel without turning the research archive into a store.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Catalog required</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag research">Active research</span>
+              <h3>Adversarial Mythology</h3>
+              <p>
+                Narrative failure modes translated into AI red-team scenarios.
+              </p>
+            </div>
+            <div>
+              <p>
+                The public version should follow review of the manuscript and
+                present only an approved research-method framing around themes
+                such as false authority, containment failure, and runaway
+                agency.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker active" aria-hidden="true"></i
+              ><span class="status">Manuscript review first</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Optional resource</span>
+              <h3>Study Library</h3>
+              <p>Curated learning resources and selected study aids.</p>
+            </div>
+            <div>
+              <p>
+                Any shared materials will be clearly labeled as study aids or
+                AI-assisted learning resources, not as original research
+                publications or claims of authorship over the source material.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Optional</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag research">Existing writing in revision</span>
+              <h3>Research Culture &amp; Civilization Design</h3>
+              <p>
+                Scientific culture, epistemics, education, knowledge systems,
+                and long-term design.
+              </p>
+            </div>
+            <div>
+              <p>
+                Several working documents already exist across these themes. The
+                public version will synthesize and revise them into a focused,
+                coherent statement before release.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker active" aria-hidden="true"></i
+              ><span class="status">Synthesis and revision</span>
+            </div>
+          </article>
+          <article class="row">
+            <div>
+              <span class="tag planned">Optional profile</span>
+              <h3>Interfaces &amp; Tools for Thinking</h3>
+              <p>
+                Wearable-computing experiments, personal tooling, automation,
+                and publishing infrastructure.
+              </p>
+            </div>
+            <div>
+              <p>
+                This can become a small evidence-led section when there are
+                approved demos, screenshots, or public workflow artifacts to
+                show—not merely a list of private ideas.
+              </p>
+            </div>
+            <div class="status-cell">
+              <i class="marker next" aria-hidden="true"></i
+              ><span class="status">Optional</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section footnote">
+        <div class="inner">
+          <p class="label">Status convention</p>
+          <h2>Protection is a completed decision.</h2>
+          <p>
+            A protected entry is not an unfinished one. Its limited description
+            is a deliberate public interface: enough to show a line of inquiry
+            exists, not enough to release private work prematurely or compromise
+            later publication and patent choices.
+          </p>
+        </div>
+      </section>
+      <section class="section record">
+        <div class="inner">
+          <p class="label">Next public releases</p>
+          <h2>Documentation follows readiness, not pressure.</h2>
+          <p>
+            Planned additions include the public-safe Invention Atlas, a
+            verified publication gallery, an About &amp; Timeline profile,
+            Creative Practice, and future profiles only when their source
+            material and disclosure boundaries are ready.
+          </p>
+          <p><a href="index.html">Return to the Research Archive</a></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2026 Nigel Patch · Nigelæn Research · Status labels describe public
+      documentation maturity.
+    </footer>
+  </body>
+</html>
