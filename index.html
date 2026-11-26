@@ -285,6 +285,11 @@
         background: var(--ink);
         color: var(--paper);
       }
+      .creative-status {
+        display: block;
+        margin-top: .65rem;
+        font: .94rem/1.4 var(--sans, Arial, sans-serif);
+      }
       .items {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -678,7 +683,7 @@
           ><span>Human–technology interfaces</span>
         </div>
       </section>
-      <section class="section creative">
+      <section class="section creative" id="creative">
         <div class="heading">
           <div>
             <p class="label">Creative &amp; educational</p>
@@ -690,7 +695,10 @@
           </p>
         </div>
         <div class="items">
-          <p>Creative writing &amp; speculative fiction</p>
+          <p>
+            <a href="the-things-we-need.html">The Things We Need</a>
+            <small class="creative-status">Science-fiction novel · Editing for publication</small>
+          </p>
           <p><a href="mythological-adversary-canon.html">The Mythological Adversary Canon</a></p>
           <p>Wearable-interface exploration</p>
           <p>Music systems &amp; composition tooling</p>
