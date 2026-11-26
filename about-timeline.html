@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="About Nigel Patch (Nigelæn): selected public research record, working approach, and timeline."
+    />
+    <title>About & Timeline — Nigelæn Research</title>
+    <style>
+      :root {
+        --ink: #17201e;
+        --paper: #f2f0e8;
+        --lime: #d7fb64;
+        --clay: #dc6c4f;
+        --violet: #c9bdf2;
+        --blue: #cce8ed;
+        --line: #aaa99f;
+        --serif: Georgia, serif;
+        --sans: Arial, sans-serif;
+        --mono: "Courier New", monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 17px/1.6 var(--sans);
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 5px;
+      }
+      .skip {
+        position: absolute;
+        left: -999px;
+      }
+      .skip:focus {
+        left: 16px;
+        top: 16px;
+        z-index: 20;
+        background: var(--lime);
+        padding: 10px;
+      }
+      .head {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 6vw;
+        background: #f2f0e8ef;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        font: 700 11px/1.1 var(--mono);
+        letter-spacing: 0.11em;
+        text-decoration: none;
+      }
+      .brand b {
+        display: inline-grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        margin-right: 8px;
+        border: 1px solid;
+        border-radius: 50%;
+        font: italic 22px var(--serif);
+        vertical-align: middle;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        font: 11px var(--mono);
+        text-transform: uppercase;
+      }
+      .hero,
+      .section {
+        padding: clamp(4rem, 9vw, 9rem) max(6vw, 24px);
+      }
+      .inner {
+        max-width: 1200px;
+        margin: auto;
+      }
+      .hero {
+        display: grid;
+        min-height: 69vh;
+        align-items: end;
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .label,
+      .eyebrow,
+      .status {
+        font: 11px var(--mono);
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 400;
+        letter-spacing: -0.055em;
+      }
+      h1 {
+        max-width: 900px;
+        margin: 34px 0 25px;
+        font-size: clamp(4rem, 10.5vw, 9.5rem);
+        line-height: 0.78;
+      }
+      h1 em,
+      .hero a,
+      .record a {
+        color: var(--lime);
+      }
+      .lede {
+        max-width: 850px;
+        margin: 0;
+        font: clamp(1.4rem, 2.9vw, 2.55rem)/1.14 var(--serif);
+      }
+      h2 {
+        font-size: clamp(2.6rem, 5.7vw, 5.2rem);
+        line-height: 0.9;
+      }
+      h3 {
+        font-size: clamp(1.65rem, 2.8vw, 2.7rem);
+        line-height: 0.94;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: clamp(35px, 7vw, 110px);
+      }
+      .big {
+        font: clamp(1.45rem, 2.5vw, 2.25rem)/1.2 var(--serif);
+      }
+      .call {
+        border-left: 3px solid var(--clay);
+        padding-left: 18px;
+      }
+      .timeline {
+        padding: 0 6vw clamp(5rem, 10vw, 10rem);
+      }
+      .frame {
+        max-width: 1320px;
+        margin: auto;
+        padding: 28px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #e9e6dc;
+      }
+      .timeline svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-width: 700px;
+      }
+      .timeline-scroll {
+        overflow-x: auto;
+      }
+      .timeline figcaption {
+        max-width: 850px;
+        margin: 22px 4px 0;
+        font-size: 0.95rem;
+      }
+      .timeline svg .line {
+        stroke: var(--ink);
+        stroke-width: 3;
+      }
+      .timeline svg .dash {
+        stroke: #777;
+        stroke-width: 2;
+        stroke-dasharray: 6 9;
+      }
+      .timeline svg .node {
+        fill: var(--paper);
+        stroke: var(--ink);
+        stroke-width: 3;
+      }
+      .timeline svg .node-active {
+        fill: var(--violet);
+        stroke: var(--ink);
+        stroke-width: 3;
+      }
+      .timeline svg .node-test {
+        fill: var(--blue);
+        stroke: var(--ink);
+        stroke-width: 3;
+      }
+      .timeline svg .box {
+        fill: var(--paper);
+        stroke: var(--ink);
+        stroke-width: 2;
+      }
+      .timeline svg .box-pub {
+        fill: var(--lime);
+        stroke: var(--ink);
+        stroke-width: 2;
+      }
+      .timeline svg .box-test {
+        fill: var(--blue);
+        stroke: var(--ink);
+        stroke-width: 2;
+      }
+      .timeline svg text {
+        fill: var(--ink);
+        font-family: Arial, sans-serif;
+      }
+      .timeline svg .svglab {
+        font:
+          12px "Courier New",
+          monospace;
+        letter-spacing: 1px;
+      }
+      .timeline svg .svgtitle {
+        font:
+          25px Georgia,
+          serif;
+      }
+      .timeline svg .svgcopy {
+        font-size: 15px;
+      }
+      .timeline svg .box-title {
+        font:
+          19px Georgia,
+          serif;
+      }
+      .timeline svg .box-label {
+        font:
+          10px "Courier New",
+          monospace;
+        letter-spacing: 0.8px;
+      }
+      .timeline svg.timeline-master {
+        min-width: 0;
+      }
+      .legacy {
+        display: none;
+      }
+      .continuation {
+        margin-top: 24px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+      }
+      .continuation h3 {
+        margin: 0 4px 14px;
+        font-size: 1.55rem;
+      }
+      .continuation p {
+        max-width: 800px;
+        margin: 0 4px 16px;
+        font-size: 0.94rem;
+      }
+      .timeline-note {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin: 22px 4px 0;
+      }
+      .key {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 10px;
+        border: 1px solid var(--ink);
+        border-radius: 20px;
+        font: 12px var(--mono);
+      }
+      .dot {
+        width: 11px;
+        height: 11px;
+        border: 1px solid;
+        border-radius: 50%;
+      }
+      .dot-pub {
+        background: var(--lime);
+      }
+      .dot-test {
+        background: var(--blue);
+      }
+      .dot-active {
+        background: var(--violet);
+      }
+      .milestones {
+        padding: 0 6vw clamp(5rem, 10vw, 10rem);
+      }
+      .milestone-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        margin: auto;
+        border: 1px solid var(--line);
+        background: var(--line);
+        gap: 1px;
+      }
+      .milestone {
+        min-height: 260px;
+        padding: 30px;
+        background: var(--paper);
+      }
+      .milestone .eyebrow {
+        display: block;
+        margin-bottom: 38px;
+        color: #42515a;
+      }
+      .milestone p {
+        max-width: 520px;
+      }
+      .statement {
+        background: var(--lime);
+        padding: clamp(2rem, 5vw, 5rem) max(6vw, 24px);
+        font: clamp(1.8rem, 3.3vw, 3.3rem)/1.1 var(--serif);
+      }
+      .statement p {
+        max-width: 1090px;
+        margin: 0 auto;
+      }
+      .ethics {
+        background: #ece0db;
+      }
+      .record {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 42px;
+        background: var(--line);
+      }
+      .cards article {
+        min-height: 230px;
+        padding: 28px;
+        background: #26302d;
+      }
+      .cards h3 {
+        margin: 32px 0 12px;
+        font-size: 2rem;
+      }
+      .cards p {
+        margin: 0;
+      }
+      footer {
+        padding: 28px 6vw;
+        background: var(--clay);
+        font: 12px var(--mono);
+      }
+      @media (max-width: 780px) {
+        nav {
+          display: none;
+        }
+        .split,
+        .milestone-grid,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .hero,
+        .section,
+        .timeline,
+        .milestones {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        .frame {
+          padding: 18px;
+        }
+        .timeline svg {
+          min-width: 760px;
+        }
+        .milestone {
+          min-height: 0;
+        }
+        .milestone .eyebrow {
+          margin-bottom: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="head">
+      <a class="brand" href="index.html"><b>N</b>NIGELÆN<br />RESEARCH</a>
+      <nav>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="research-release-board.html">Release board</a>
+        <a href="https://orcid.org/0009-0003-1812-0895">ORCID</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="inner">
+          <p class="label">About Nigel Patch · Nigelæn</p>
+          <h1>Independent work,<br /><em>made legible.</em></h1>
+          <p class="lede">
+            Seattle-raised independent researcher, author, systems designer, and
+            artist working across formal systems, theoretical inquiry, adaptive
+            computation, visual atlases, and creative practice.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner split">
+          <div>
+            <p class="label">Biography</p>
+            <h2>A self-directed path through research, enterprise, and art.</h2>
+          </div>
+          <div>
+            <p class="big">
+              Nigel Patch (Nigelæn) was born and raised in Seattle, Washington.
+              After leaving conventional high school to study online, he chose
+              the GED path and entered college a year earlier than his original
+              school cohort.
+            </p>
+            <p>
+              One quarter of college made the next decision clear: the pace and
+              scope of formal study did not match the questions he wanted to
+              pursue. He left to build a self-directed education, spending
+              roughly the next twelve years auditing online courses, working
+              through textbooks across disciplines, and building a practical,
+              continually renewed personal curriculum.
+            </p>
+            <p>
+              That learning path developed alongside work in enterprise and the
+              arts. Patch founded Prismatii, his first successful company, and
+              has shown and sold artwork through a gallery in West Seattle.
+              Those experiences remain part of the portfolio’s wider logic:
+              research is not separated from making, visual thinking, or the
+              realities of bringing work into the world.
+            </p>
+            <p>
+              Today, the public record crosses mathematical notation,
+              theoretical physics, computational architecture, visual research
+              instruments, invention design, and speculative creative practice.
+              The common method is to build the languages, instruments, and
+              records a question requires.
+            </p>
+            <p class="call">
+              This portfolio distinguishes public work, bounded implementation,
+              active research, conceptual work, and material held back for
+              privacy, intellectual-property, or publication reasons.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="timeline" aria-labelledby="timeline-title">
+        <div class="inner">
+          <p class="label">Selected development timeline</p>
+          <h2 id="timeline-title">
+            A self-directed practice,<br /><em>made into a public record.</em>
+          </h2>
+        </div>
+        <div class="frame">
+          <div class="timeline-scroll legacy">
+            <svg
+              viewBox="0 0 1240 535"
+              role="img"
+              aria-labelledby="svg-title svg-desc"
+            >
+              <title id="svg-title">
+                Selected public timeline of Nigelæn Research
+              </title>
+              <desc id="svg-desc">
+                A horizontal timeline connects ongoing formal language work with
+                public 2026 publications, FPGA reference work, and the current
+                public archive.
+              </desc>
+              <line class="line" x1="84" y1="278" x2="1150" y2="278" />
+              <text class="svglab" x="84" y="321">EARLY YEARS</text>
+              <text class="svglab" x="415" y="321">2026</text>
+              <text class="svglab" x="1040" y="321">NOW</text>
+              <line class="dash" x1="112" y1="278" x2="112" y2="154" />
+              <circle class="node-active" cx="112" cy="278" r="12" />
+              <rect class="box" x="25" y="42" width="235" height="112" rx="8" />
+              <text class="svglab" x="45" y="69">SEATTLE, WA</text>
+              <text class="svgtitle" x="45" y="103">Early</text>
+              <text class="svgtitle" x="45" y="128">foundations</text>
+              <text class="svgcopy" x="45" y="149">
+                School, art, and questions
+              </text>
+              <line class="dash" x1="336" y1="278" x2="336" y2="398" />
+              <circle class="node" cx="336" cy="278" r="12" />
+              <rect
+                class="box-pub"
+                x="237"
+                y="398"
+                width="222"
+                height="104"
+                rx="8"
+              />
+              <text class="svglab" x="257" y="425">SELF-DIRECTED STUDY</text>
+              <text class="svgtitle" x="257" y="458">Beyond</text>
+              <text class="svgtitle" x="257" y="480">formal college</text>
+              <line class="dash" x1="570" y1="278" x2="570" y2="145" />
+              <circle class="node" cx="570" cy="278" r="12" />
+              <rect
+                class="box-pub"
+                x="458"
+                y="40"
+                width="225"
+                height="105"
+                rx="8"
+              />
+              <text class="svglab" x="478" y="67">PUBLICATION PROGRAM</text>
+              <text class="svgtitle" x="478" y="102">TVFT</text>
+              <text class="svgcopy" x="478" y="128">
+                Five split books · 14 volumes
+              </text>
+              <line class="dash" x1="798" y1="278" x2="798" y2="398" />
+              <circle class="node" cx="798" cy="278" r="12" />
+              <rect
+                class="box-pub"
+                x="684"
+                y="398"
+                width="228"
+                height="104"
+                rx="8"
+              />
+              <text class="svglab" x="704" y="425">LATER FORMALIZATION</text>
+              <text class="svgtitle" x="704" y="459">Morphicon &amp;</text>
+              <text class="svgtitle" x="704" y="480">Morphæmatics</text>
+              <line class="dash" x1="1010" y1="278" x2="1010" y2="145" />
+              <circle class="node" cx="1010" cy="278" r="12" />
+              <rect
+                class="box-test"
+                x="890"
+                y="40"
+                width="239"
+                height="105"
+                rx="8"
+              />
+              <text class="svglab" x="910" y="67">RESEARCH INSTRUMENTS</text>
+              <text class="svgtitle" x="910" y="102">Grammar of</text>
+              <text class="svgtitle" x="910" y="128">Emergence</text>
+              <line class="dash" x1="1145" y1="278" x2="1145" y2="398" />
+              <circle class="node-active" cx="1145" cy="278" r="12" />
+              <text class="svglab" x="1028" y="374">CURRENT PUBLIC RECORD</text>
+              <text class="svgtitle" x="1028" y="405">Mello &amp;</text>
+              <text class="svgtitle" x="1028" y="430">Prismæon</text>
+              <text class="svgcopy" x="1028" y="451">
+                Active and protected work
+              </text>
+            </svg>
+            <section
+              class="continuation"
+              aria-label="Research programs, continued"
+            >
+              <p class="label">Timeline continued · research record</p>
+              <h3>
+                From the first publication program into the public archive.
+              </h3>
+              <svg
+                viewBox="0 0 1240 300"
+                role="img"
+                aria-label="Continuation of the timeline, showing Morphæmatics, Grammar of Emergence, Mellophanerognosis, Prismæon, and the research release board."
+              >
+                <line class="line" x1="72" y1="165" x2="1155" y2="165" />
+                <text class="svglab" x="72" y="207">LATER FORMALIZATION</text>
+                <text class="svglab" x="1010" y="207">PUBLIC ARCHIVE</text>
+                <line class="dash" x1="116" y1="165" x2="116" y2="66" />
+                <circle class="node-active" cx="116" cy="165" r="11" />
+                <rect
+                  class="box"
+                  x="24"
+                  y="16"
+                  width="185"
+                  height="50"
+                  rx="7"
+                />
+                <text class="svglab" x="40" y="37">ACTIVE FRAMEWORK</text>
+                <text class="svgtitle" x="40" y="59">Morphæmatics</text>
+                <line class="dash" x1="347" y1="165" x2="347" y2="255" />
+                <circle class="node" cx="347" cy="165" r="11" />
+                <rect
+                  class="box-pub"
+                  x="242"
+                  y="225"
+                  width="210"
+                  height="55"
+                  rx="7"
+                />
+                <text class="svglab" x="258" y="247">PUBLISHED ATLAS</text>
+                <text class="svgtitle" x="258" y="270">
+                  Grammar of Emergence
+                </text>
+                <line class="dash" x1="584" y1="165" x2="584" y2="66" />
+                <circle class="node" cx="584" cy="165" r="11" />
+                <rect
+                  class="box-pub"
+                  x="472"
+                  y="16"
+                  width="224"
+                  height="50"
+                  rx="7"
+                />
+                <text class="svglab" x="488" y="37">07 NOV 2026</text>
+                <text class="svgtitle" x="488" y="59">Mellophanerognosis</text>
+                <line class="dash" x1="821" y1="165" x2="821" y2="255" />
+                <circle class="node" cx="821" cy="165" r="11" />
+                <rect
+                  class="box-test"
+                  x="716"
+                  y="225"
+                  width="210"
+                  height="55"
+                  rx="7"
+                />
+                <text class="svglab" x="732" y="247">
+                  BOUNDED REFERENCE WORK
+                </text>
+                <text class="svgtitle" x="732" y="270">Prismæon™</text>
+                <line class="dash" x1="1080" y1="165" x2="1080" y2="66" />
+                <circle class="node-active" cx="1080" cy="165" r="11" />
+                <rect
+                  class="box"
+                  x="960"
+                  y="16"
+                  width="232"
+                  height="50"
+                  rx="7"
+                />
+                <text class="svglab" x="976" y="37">
+                  DOCUMENTATION STANDARD
+                </text>
+                <text class="svgtitle" x="976" y="59">Release Board</text>
+              </svg>
+            </section>
+            <section
+              class="continuation"
+              aria-label="Current project directions"
+            >
+              <p class="label">Current project map · not a dated sequence</p>
+              <h3>Active, editing, protected, and planned directions.</h3>
+              <p>
+                These are current lines of work rather than claims about
+                finished outcomes. The colors indicate public posture, not
+                technical or scientific validation.
+              </p>
+              <svg
+                viewBox="0 0 1240 340"
+                role="img"
+                aria-label="Current project map with active work in purple, protected work in pink, and planned work in yellow."
+              >
+                <line class="line" x1="72" y1="174" x2="1155" y2="174" />
+                <text class="svglab" x="72" y="216">ACTIVE / EDITING</text>
+                <text class="svglab" x="844" y="216">PROTECTED / PLANNED</text>
+                <line class="dash" x1="108" y1="174" x2="108" y2="70" />
+                <circle class="node-active" cx="108" cy="174" r="11" />
+                <rect
+                  x="20"
+                  y="18"
+                  width="178"
+                  height="52"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="svglab" x="35" y="39">ACTIVE WRITING</text>
+                <text class="svgtitle" x="35" y="62">Intelligence as Flow</text>
+                <line class="dash" x1="329" y1="174" x2="329" y2="278" />
+                <circle class="node-active" cx="329" cy="174" r="11" />
+                <rect
+                  x="220"
+                  y="278"
+                  width="220"
+                  height="52"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="svglab" x="236" y="299">ACTIVE RESEARCH</text>
+                <text class="svgtitle" x="236" y="322">
+                  Adversarial Mythology
+                </text>
+                <line class="dash" x1="572" y1="174" x2="572" y2="70" />
+                <circle class="node-active" cx="572" cy="174" r="11" />
+                <rect
+                  x="467"
+                  y="18"
+                  width="211"
+                  height="52"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="svglab" x="483" y="39">MANUSCRIPT EDITING</text>
+                <text class="svgtitle" x="483" y="62">The Things We Need</text>
+                <line class="dash" x1="808" y1="174" x2="808" y2="278" />
+                <circle class="node-active" cx="808" cy="174" r="11" />
+                <rect
+                  x="700"
+                  y="278"
+                  width="217"
+                  height="52"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="svglab" x="716" y="299">
+                  SYNTHESIS &amp; REVISION
+                </text>
+                <text class="svgtitle" x="716" y="322">Research Culture</text>
+                <line class="dash" x1="1012" y1="174" x2="1012" y2="70" />
+                <circle class="node" cx="1012" cy="174" r="11" />
+                <rect
+                  x="922"
+                  y="18"
+                  width="178"
+                  height="52"
+                  rx="7"
+                  fill="#edc7bd"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="svglab" x="938" y="39">PROTECTED CATEGORIES</text>
+                <text class="svgtitle" x="938" y="62">Invention Atlas</text>
+                <line class="dash" x1="1152" y1="174" x2="1152" y2="278" />
+                <circle class="node" cx="1152" cy="174" r="11" />
+                <rect
+                  x="1030"
+                  y="278"
+                  width="190"
+                  height="52"
+                  rx="7"
+                  fill="#e6e0c4"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="svglab" x="1046" y="299">PLANNED PROGRAMS</text>
+                <text class="svgtitle" x="1046" y="322">FrankenLab · ASEP</text>
+              </svg>
+            </section>
+          </div>
+          <div class="timeline-scroll">
+            <svg
+              class="timeline-master"
+              viewBox="0 0 1240 1110"
+              role="img"
+              aria-labelledby="master-title master-desc"
+            >
+              <title id="master-title">
+                Selected chronology of Nigel Patch’s work
+              </title>
+              <desc id="master-desc">
+                A numbered timeline from early foundations through
+                Mellophanerognosis. The line continues across three linked rows,
+                following the arrows from entry 1 to entry 13.
+              </desc>
+              <text class="svglab" x="42" y="24">
+                READ 01 → 13 · FOLLOW THE LINE AND ARROWS
+              </text>
+              <line class="line" x1="66" y1="158" x2="1165" y2="158" />
+              <path
+                class="line"
+                d="M1165 158 L1148 149 M1165 158 L1148 167"
+                fill="none"
+              />
+              <path
+                class="line"
+                d="M1165 158 L1183 158 L1183 523 L1155 523"
+                fill="none"
+              />
+              <path
+                class="line"
+                d="M1155 523 L1172 514 M1155 523 L1172 532"
+                fill="none"
+              />
+              <line class="line" x1="1155" y1="523" x2="66" y2="523" />
+              <path
+                class="line"
+                d="M66 523 L83 514 M66 523 L83 532"
+                fill="none"
+              />
+              <path
+                class="line"
+                d="M66 523 L48 523 L48 930 L78 930"
+                fill="none"
+              />
+              <path
+                class="line"
+                d="M78 930 L61 921 M78 930 L61 939"
+                fill="none"
+              />
+              <line class="line" x1="78" y1="930" x2="1165" y2="930" />
+              <path
+                class="line"
+                d="M1165 930 L1148 921 M1165 930 L1148 939"
+                fill="none"
+              />
+              <text class="svglab" x="68" y="190">
+                FOUNDATIONS → FIRST PUBLIC PROGRAM
+              </text>
+              <text class="svglab" x="69" y="555">LATER RESEARCH PROGRAMS</text>
+              <text class="svglab" x="78" y="962">
+                CURRENT PUBLIC / PROTECTED DIRECTIONS
+              </text>
+
+              <circle class="node" cx="120" cy="158" r="11" />
+              <line class="dash" x1="120" y1="158" x2="120" y2="78" />
+              <rect class="box" x="40" y="28" width="180" height="50" rx="7" />
+              <text class="box-label" x="54" y="47">01 · SEATTLE, WA</text>
+              <text class="box-title" x="54" y="69">Early Foundations</text>
+              <circle class="node" cx="350" cy="158" r="11" />
+              <line class="dash" x1="350" y1="158" x2="350" y2="246" />
+              <rect
+                class="box"
+                x="254"
+                y="246"
+                width="214"
+                height="53"
+                rx="7"
+              />
+              <text class="box-label" x="268" y="266">
+                02 · SELF-DIRECTED STUDY
+              </text>
+              <text class="box-title" x="268" y="289">
+                Beyond formal college
+              </text>
+              <circle class="node" cx="582" cy="158" r="11" />
+              <line class="dash" x1="582" y1="158" x2="582" y2="78" />
+              <rect
+                class="box-pub"
+                x="507"
+                y="28"
+                width="150"
+                height="50"
+                rx="7"
+              />
+              <text class="box-label" x="521" y="47">03 · PUBLISHED</text>
+              <text class="box-title" x="521" y="69">TVFT</text>
+              <circle class="node-active" cx="811" cy="158" r="11" />
+              <line class="dash" x1="811" y1="158" x2="811" y2="246" />
+              <rect
+                x="703"
+                y="246"
+                width="216"
+                height="53"
+                rx="7"
+                fill="#c9bdf2"
+                stroke="#17201e"
+                stroke-width="2"
+              />
+              <text class="box-label" x="717" y="266">04 · ACTIVE WRITING</text>
+              <text class="box-title" x="717" y="289">
+                Intelligence as Flow
+              </text>
+              <circle class="node-active" cx="1050" cy="158" r="11" />
+              <line class="dash" x1="1050" y1="158" x2="1050" y2="78" />
+              <rect
+                x="952"
+                y="28"
+                width="196"
+                height="50"
+                rx="7"
+                fill="#c9bdf2"
+                stroke="#17201e"
+                stroke-width="2"
+              />
+              <text class="box-label" x="966" y="47">
+                05 · SYNTHESIS &amp; REVISION
+              </text>
+              <text class="box-title" x="966" y="69">Research Culture</text>
+
+              <g transform="translate(0 120)">
+                <circle class="node-test" cx="1035" cy="403" r="11" />
+                <line class="dash" x1="1035" y1="403" x2="1035" y2="323" />
+                <rect
+                  class="box-test"
+                  x="952"
+                  y="273"
+                  width="166"
+                  height="50"
+                  rx="7"
+                />
+                <text class="box-label" x="966" y="292">06 · BOUNDED WORK</text>
+                <text class="box-title" x="966" y="314">Prismæon™</text>
+                <circle class="node-active" cx="782" cy="403" r="11" />
+                <line class="dash" x1="782" y1="403" x2="782" y2="491" />
+                <rect
+                  x="679"
+                  y="491"
+                  width="206"
+                  height="53"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="box-label" x="693" y="511">
+                  07 · ACTIVE FRAMEWORK
+                </text>
+                <text class="box-title" x="693" y="534">Morphæmatics</text>
+                <circle class="node-active" cx="535" cy="403" r="11" />
+                <line class="dash" x1="535" y1="403" x2="535" y2="323" />
+                <rect
+                  x="424"
+                  y="273"
+                  width="222"
+                  height="50"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="box-label" x="438" y="292">
+                  08 · ACTIVE RESEARCH
+                </text>
+                <text class="box-title" x="438" y="314">
+                  Adversarial Mythology
+                </text>
+                <circle class="node-active" cx="285" cy="403" r="11" />
+                <line class="dash" x1="285" y1="403" x2="285" y2="491" />
+                <rect
+                  x="187"
+                  y="491"
+                  width="196"
+                  height="53"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="box-label" x="201" y="511">
+                  09 · MANUSCRIPT EDITING
+                </text>
+                <text class="box-title" x="201" y="534">
+                  The Things We Need
+                </text>
+              </g>
+
+              <g transform="translate(0 280)">
+                <circle class="node" cx="150" cy="650" r="11" />
+                <line class="dash" x1="150" y1="650" x2="150" y2="570" />
+                <rect
+                  class="box-pub"
+                  x="45"
+                  y="520"
+                  width="242"
+                  height="50"
+                  rx="7"
+                />
+                <text class="box-label" x="59" y="539">
+                  10 · PUBLISHED ATLAS
+                </text>
+                <text class="box-title" x="59" y="562">
+                  Grammar of Emergence
+                </text>
+                <circle class="node" cx="415" cy="650" r="11" />
+                <line class="dash" x1="415" y1="650" x2="415" y2="738" />
+                <rect
+                  x="325"
+                  y="738"
+                  width="180"
+                  height="50"
+                  rx="7"
+                  fill="#edc7bd"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="box-label" x="339" y="757">11 · PROTECTED</text>
+                <text class="box-title" x="339" y="780">Invention Atlas</text>
+                <circle class="node-active" cx="680" cy="650" r="11" />
+                <line class="dash" x1="680" y1="650" x2="680" y2="570" />
+                <rect
+                  x="595"
+                  y="520"
+                  width="170"
+                  height="50"
+                  rx="7"
+                  fill="#c9bdf2"
+                  stroke="#17201e"
+                  stroke-width="2"
+                />
+                <text class="box-label" x="609" y="539">
+                  12 · ACTIVE DIRECTION
+                </text>
+                <text class="box-title" x="609" y="562">FrankenLab</text>
+                <circle class="node" cx="965" cy="650" r="11" />
+                <line class="dash" x1="965" y1="650" x2="965" y2="738" />
+                <rect
+                  class="box-pub"
+                  x="850"
+                  y="738"
+                  width="230"
+                  height="50"
+                  rx="7"
+                />
+                <text class="box-label" x="864" y="757">
+                  13 · PUBLISHED · 07 NOV 2026
+                </text>
+                <text class="box-title" x="864" y="780">
+                  Mellophanerognosis
+                </text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>
+            This is a selected project chronology, ordered by the start of each
+            line of work rather than by completion date. Follow entries 01–13;
+            the arrows show where the timeline continues onto the next row.
+          </figcaption>
+          <div class="timeline-note" aria-label="Timeline key">
+            <span class="key"
+              ><i class="dot dot-pub"></i>Published public record</span
+            ><span class="key"
+              ><i class="dot dot-test"></i>Implemented / bounded test</span
+            ><span class="key"
+              ><i class="dot dot-active"></i>Active research</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="milestones" aria-label="Timeline notes">
+        <!-- Portfolio maintenance: add detailed cards only when each has a public-safe definition and one real destination. Build them in timeline order, from TVFT through Mellophanerognosis. -->
+        <div class="milestone-grid">
+          <article class="milestone">
+            <span class="eyebrow">Publication program</span>
+            <h3>Publish the formal program.</h3>
+            <p>
+              TVFT predates the later Morphicon, Morphæonica, Morphæmatics, and
+              Grammar work. Its five split books organize an author-proposed
+              theoretical-physics program across fourteen volumes; the program’s
+              target is ambitious, while its status is clearly independent
+              theoretical research.
+            </p>
+            <p><a href="tvft.html">Explore TVFT</a></p>
+          </article>
+          <article class="milestone">
+            <span class="eyebrow">Notation &amp; visual systems</span>
+            <h3>Build languages and visual instruments.</h3>
+            <p>
+              The later notation and atlas work includes Morphicon, Morphæonica,
+              Morphæmatics, and <em>The Grammar of Emergence</em>. They
+              represent different but related attempts to make structural
+              questions more visible, comparable, and open to revision.
+            </p>
+            <p>
+              <a href="morphaematics.html">Explore Morphæmatics</a> ·
+              <a href="grammar-of-emergence.html">Explore the atlas</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="statement">
+        <p>
+          “The point of a portfolio is not to make every project look finished.
+          It is to make the work, its evidence, and its boundaries
+          intelligible.”
+        </p>
+      </section>
+
+      <section class="section ethics">
+        <div class="inner split">
+          <div>
+            <p class="label">How to read this archive</p>
+            <h2>Ambition needs a visible boundary.</h2>
+          </div>
+          <div>
+            <p>
+              Some pages describe published books or an implemented, bounded
+              reference system. Others present developing frameworks, research
+              directions, or public-safe category maps. They should not be read
+              as commercial products, established scientific consensus, or
+              evidence for confidential work.
+            </p>
+            <p class="call">
+              Protected work is not an omission or a teaser. It is a deliberate
+              choice to avoid premature disclosure, unsupported claims, and
+              avoidable compromise of future publication or
+              intellectual-property decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section record">
+        <div class="inner">
+          <p class="label">Where the record lives</p>
+          <h2>Start with the work itself.</h2>
+          <div class="cards">
+            <article>
+              <p class="label">Scholarship record</p>
+              <h3><a href="https://orcid.org/0009-0003-1812-0895">ORCID</a></h3>
+              <p>Public research identity and publication record.</p>
+            </article>
+            <article>
+              <p class="label">Archive guide</p>
+              <h3><a href="research-release-board.html">Release Board</a></h3>
+              <p>Current public documentation and disclosure map.</p>
+            </article>
+            <article>
+              <p class="label">Research archive</p>
+              <h3><a href="index.html">Portfolio Home</a></h3>
+              <p>
+                Publications, profiles, programs, and bounded project routes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2026 Nigel Patch · Nigelæn Research · Status language describes public
+      documentation maturity, not endorsement or validation.
+    </footer>
+  </body>
+</html>
