@@ -61,6 +61,13 @@
       .plates { grid-template-columns: 1fr; }
       .art-link img { aspect-ratio: auto; max-height: 70vh; }
     }
+    .commission { padding-block: clamp(2.4rem, 5vw, 4.5rem); border-bottom: 1px solid var(--line); }
+    .commission h2 { font-size: clamp(2.15rem, 4vw, 3.5rem); }
+    .commission p { max-width: 53ch; margin-block: .75rem 1.2rem; }
+    .commission summary { width: fit-content; padding: .65rem 1.15rem; background: var(--ink); color: var(--paper); border-radius: .25rem; cursor: pointer; font-weight: 600; }
+    .commission summary:hover { text-decoration: underline; text-underline-offset: .2em; }
+    .commission .contact-options { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem 1.35rem; margin-top: 1rem; }
+    .commission .address { user-select: all; overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
@@ -136,6 +143,20 @@
           </figure>
       </div>
     </div></section>
+    <section class="commission" id="commissions" aria-labelledby="commission-title">
+      <div class="wrap">
+        <h2 id="commission-title">Sculpture commissions</h2>
+        <p>If you’d like to commission <em>Sacred Hands</em> or <em>The Table of Lesbos</em> in metal, tell Nigel which work you have in mind and where you’d like to place it.</p>
+        <details>
+          <summary>Discuss a commission</summary>
+          <div class="contact-options">
+            <a class="address" href="mailto:nigel@prismaeon.com?subject=Sculpture%20commission%20inquiry">nigel@prismaeon.com</a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=nigel@prismaeon.com&amp;su=Sculpture%20commission%20inquiry" target="_blank" rel="noopener noreferrer">Compose in Gmail</a>
+            <a href="https://outlook.live.com/mail/0/deeplink/compose?to=nigel@prismaeon.com&amp;subject=Sculpture%20commission%20inquiry" target="_blank" rel="noopener noreferrer">Compose in Outlook.com</a>
+          </div>
+        </details>
+      </div>
+    </section>
   </main>
   <footer><div class="wrap"><a href="index.html#creative">Back to Creative &amp; Educational</a><span>Nigel Patch · Nigelæn Research</span></div></footer>
   <dialog id="viewer" aria-labelledby="view-title">
