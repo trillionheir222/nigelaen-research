@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183735">
+  <title>FrankenLab — Experimental hybrid computation | Nigelæn Research</title>
+  <meta name="description" content="Nigel Patch studies how computing methods work together. Meet Temporal Chimera, FrankenLab’s first prototype for distinguishing noisy patterns that unfold in different orders.">
+  <style>
+    :root { color-scheme: light; --paper: #f4f1e8; --ink: #18211e; --forest: #183735; --mint: #d9f6bb; --lilac: #e4ddf1; --rule: #b4b9ad; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1.0625rem/1.62 Arial, sans-serif; }
+    p, h1, h2, h3, figure { margin: 0; }
+    h1, h2, h3 { font-family: Georgia, serif; font-weight: 400; line-height: 1.04; letter-spacing: -.045em; }
+    a { color: inherit; text-underline-offset: .23em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #7852a1; outline-offset: 4px; }
+    .skip { position: absolute; top: -8rem; left: 1rem; z-index: 2; background: var(--mint); padding: .6rem 1rem; }
+    .skip:focus { top: .5rem; }
+    .wrap { width: min(90%, 74rem); margin-inline: auto; }
+    header .wrap, footer .wrap, nav { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1.4rem; }
+    header .wrap, footer .wrap { justify-content: space-between; padding-block: 1rem; }
+    nav, footer { font-size: .94rem; }
+    .brand { display: inline-flex; align-items: center; gap: .6rem; font: bold .78rem/1.2 monospace; letter-spacing: .1em; text-decoration: none; }
+    .brand b { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid; border-radius: 50%; font: italic 1.65rem Georgia, serif; }
+    .hero { color: var(--paper); background: var(--forest); }
+    .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(3rem, 7vw, 6.8rem); }
+    .label { font: .875rem/1.45 monospace; letter-spacing: .07em; text-transform: uppercase; }
+    .hero .label { color: var(--mint); }
+    h1 { font-size: clamp(3.1rem, 7.8vw, 7.2rem); margin-block: .8rem 1.25rem; }
+    .lead { max-width: 28em; font: clamp(1.35rem, 2.3vw, 1.8rem)/1.4 Georgia, serif; }
+    .example { padding: clamp(1rem, 3vw, 2rem); color: var(--ink); background: var(--paper); border-top: 4px solid var(--mint); }
+    .example figcaption { font: 1.65rem/1.12 Georgia, serif; }
+    .readings { width: 100%; border-collapse: collapse; text-align: center; margin-block: 1rem; }
+    .readings th, .readings td { padding: .55rem .22rem; }
+    .readings thead th { font: .875rem/1.4 monospace; border-bottom: 1px solid var(--rule); }
+    .readings th:first-child { text-align: left; }
+    .readings tbody th { font-size: .95rem; }
+    .readings td span { display: block; min-width: 0; padding: .15rem .3rem; border: 1px solid #8e948a; }
+    .low { background: var(--lilac); }
+    .high { background: var(--mint); }
+    .example-note { font-size: 1rem; max-width: 45ch; }
+    .section { padding-block: clamp(2.8rem, 5.5vw, 5rem); }
+    .split { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.25fr); gap: 1.25rem clamp(2rem, 6vw, 6rem); }
+    h2 { font-size: clamp(2.1rem, 4.2vw, 3.5rem); max-width: 18ch; }
+    .split p { max-width: 60ch; }
+    .split p + p { margin-top: .8rem; }
+    #temporal-chimera { background: var(--lilac); border-block: 1px solid var(--rule); }
+    #temporal-chimera h2 { margin: .55rem 0; }
+    .meta { font: 1rem/1.5 monospace; }
+    footer { border-top: 1px solid var(--rule); }
+    @media (max-width: 50rem) {
+      .hero .wrap, .split { grid-template-columns: 1fr; }
+      .example { max-width: 36rem; }
+    }
+    @media (max-width: 26rem) {
+      .readings th, .readings td { padding-inline: .13rem; }
+      nav { gap: .5rem .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap">
+    <a class="brand" href="index.html" aria-label="Nigelæn Research home"><b aria-hidden="true">N</b><span>NIGELÆN<br>RESEARCH</span></a>
+    <nav aria-label="Portfolio"><a href="index.html#engineering">Computing &amp; Engineering</a><a href="research-release-board.html">Release Board</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="lab-title"><div class="wrap">
+      <div>
+        <p class="label">Experimental hybrid computation</p>
+        <h1 id="lab-title">FrankenLab</h1>
+        <p class="lead">When does combining two ways of processing information actually help? Nigel Patch’s computing lab builds hybrids and tests them against simpler alternatives. Its first experiment asks whether a system can remember the order in which things happened.</p>
+      </div>
+      <figure class="example" aria-labelledby="example-title">
+        <figcaption id="example-title">Same readings, different order</figcaption>
+        <table class="readings" aria-label="Illustrative sequences of three readings">
+          <thead><tr><th scope="col">Sequence</th><th scope="col">First</th><th scope="col">Then</th><th scope="col">Last</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">A</th><td><span class="low">Low</span></td><td><span class="high">High</span></td><td><span class="high">High</span></td></tr>
+            <tr><th scope="row">B</th><td><span class="high">High</span></td><td><span class="high">High</span></td><td><span class="low">Low</span></td></tr>
+          </tbody>
+        </table>
+        <p class="example-note">Both sequences average to the same value. Only A ends high. This simplified example shows what a system loses when it averages away time.</p>
+      </figure>
+    </div></section>
+    <section class="section" aria-labelledby="creatures"><div class="wrap split">
+      <h2 id="creatures">What makes a “creature”?</h2>
+      <div>
+        <p>Patch calls each modular prototype a <em>creature</em>. He starts with existing open-source components and a task that makes their interaction visible. One component might respond to a changing signal. Another might help the system recognize a pattern it has encountered before.</p>
+        <p>The useful comparison is what happens when a simpler system attempts the same task. If it performs just as well, the lab has learned something about the extra complexity. Patch keeps unsuccessful experiments alongside promising ones, recording the software versions, test conditions, results, and limitations for each run.</p>
+      </div>
+    </div></section>
+    <section class="section" id="temporal-chimera" aria-labelledby="creature-title"><div class="wrap split">
+      <div>
+        <p class="label">Creature 001</p>
+        <h2 id="creature-title">Temporal Chimera</h2>
+        <p class="meta">First documented run · November 2026</p>
+      </div>
+      <div>
+        <p>Temporal Chimera studies the connection between timing and memory. Its task is to classify noisy sequences in which the order of events carries information. A system has to pick out a pattern even when small fluctuations make two examples of it look different.</p>
+        <p>Patch reports that the hybrid ran alongside simpler comparisons in a first synthetic trial. That run established that the prototype could carry out the task. Whether combining the methods gives it a dependable advantage is still an open question.</p>
+      </div>
+    </div></section>
+    <section class="section" aria-labelledby="next"><div class="wrap split">
+      <h2 id="next">What would a second trial tell us?</h2>
+      <p>A different set of noisy examples could change which system comes out ahead. The next step is to repeat the comparison across multiple trials under matched conditions, then examine what each component contributes. That evidence will guide which combinations the lab pursues.</p>
+    </div></section>
+  </main>
+  <footer><div class="wrap"><a href="index.html#programs">Back to Programs of Inquiry</a><span>Nigel Patch · Nigelæn Research</span></div></footer>
+</body>
+</html>
