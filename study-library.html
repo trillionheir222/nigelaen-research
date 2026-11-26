@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243c36">
+  <title>Study Library — Independent learning | Nigelæn Research</title>
+  <meta name="description" content="Explore five questions from Nigel Patch’s independent studies, browse the subjects of 15 private learning guides, and read the public references that accompany them.">
+  <style>
+    :root { color-scheme: light; --ink: #1a2521; --paper: #f4f1e8; --green: #243c36; --mint: #deefae; --rule: #b5baaa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 1.0625rem/1.6 Arial, sans-serif; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: Georgia, serif; font-weight: 400; line-height: 1.07; letter-spacing: -.045em; }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid #8a59aa; outline-offset: 4px; }
+    .skip { position: absolute; top: -7rem; left: 1rem; background: var(--paper); padding: .6rem; z-index: 2; }
+    .skip:focus { top: .4rem; }
+    .wrap { width: min(90%, 72rem); margin-inline: auto; }
+    header .wrap, footer .wrap, header nav { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.3rem; }
+    header .wrap, footer .wrap { justify-content: space-between; padding-block: 1rem; }
+    header nav, footer { font-size: .94rem; }
+    .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font: bold .8rem/1.2 monospace; letter-spacing: .08em; }
+    .brand b { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid; border-radius: 50%; font: italic 1.6rem Georgia, serif; }
+    .label { font: .875rem/1.45 monospace; letter-spacing: .065em; text-transform: uppercase; }
+    .hero { background: var(--green); color: var(--paper); }
+    .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .85fr); align-items: end; gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(3rem, 7vw, 6rem); }
+    .hero .label { color: var(--mint); }
+    h1 { margin: .6rem 0 1.1rem; font-size: clamp(3.4rem, 8vw, 7rem); }
+    .lead { max-width: 32em; font: clamp(1.35rem, 2.25vw, 1.8rem)/1.38 Georgia, serif; }
+    .jump { padding-left: 1.5rem; border-left: 2px solid var(--mint); }
+    .jump h2 { font: 1.2rem/1.4 Georgia, serif; margin-bottom: .55rem; }
+    .jump ul { list-style: none; margin: 0; padding: 0; }
+    .jump a { display: inline-block; padding: .18rem 0; }
+    details { border-bottom: 1px solid var(--ink); }
+    summary { cursor: pointer; padding: 1.1rem 0; font: 1.23rem/1.45 Georgia, serif; }
+    .catalog { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 2rem; margin-block: .65rem 2.35rem; }
+    .catalog h2 { font-size: 1.5rem; }
+    .catalog ol, .catalog ul { padding-left: 1.65rem; margin-bottom: 0; }
+    .catalog li { padding: .23rem 0 .23rem .18rem; }
+    .entry { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.12fr); align-items: start; gap: 1.1rem clamp(2rem, 6vw, 6rem); padding-block: clamp(2.25rem, 5vw, 4.5rem); border-bottom: 1px solid var(--rule); scroll-margin: 1.25rem; }
+    .entry .label { color: #445f51; }
+    .entry h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); max-width: 19ch; margin-top: .5rem; }
+    .text { max-width: 60ch; }
+    .reading { margin-top: 1.2rem; padding-left: 1rem; border-left: 3px solid #84995a; }
+    .reading a { font-family: Georgia, serif; }
+    .reading small { display: block; font-size: .91rem; }
+    @media (max-width: 46rem) {
+      .hero .wrap, .catalog, .entry { grid-template-columns: 1fr; }
+      .jump ul { display: flex; flex-wrap: wrap; gap: .2rem 1rem; }
+      .jump { padding-left: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap">
+    <a class="brand" href="index.html" aria-label="Nigelæn Research home"><b aria-hidden="true">N</b><span>NIGELÆN<br>RESEARCH</span></a>
+    <nav aria-label="Portfolio"><a href="index.html#creative">Creative &amp; Educational</a><a href="research-release-board.html">Release Board</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="title"><div class="wrap">
+      <div><p class="label">Independent learning · Nigel Patch</p><h1 id="title">Study Library</h1>
+        <p class="lead">Nigel Patch uses a private collection of 15 AI-assisted study guides for his own learning. These five questions offer a way into the subjects he studies. Each leads to a public reading cited in the guides.</p></div>
+      <nav class="jump" aria-label="Study subjects"><h2>Find a question</h2><ul>
+        <li><a href="#mathematics">Mathematical language</a></li>
+        <li><a href="#information">Information theory</a></li>
+        <li><a href="#feedback">Dynamics &amp; control</a></li>
+        <li><a href="#evidence">Inference &amp; model validation</a></li>
+        <li><a href="#judgment">Strategy &amp; character</a></li>
+      </ul></nav>
+    </div></section>
+    <div class="wrap">
+      <details id="subjects">
+        <summary>Browse all 15 guide subjects</summary>
+        <div class="catalog">
+          <div><h2>The 12-volume sequence</h2><ol>
+            <li>Mathematical reasoning, proofs, linear algebra, and tensors</li>
+            <li>Information theory, entropy, and coding theory</li>
+            <li>Dynamical systems, nonlinear dynamics, and chaos</li>
+            <li>Probability, Bayesian inference, causality, and statistics</li>
+            <li>Formal logic, type theory, and verification</li>
+            <li>Control theory, signals, and system identification</li>
+            <li>Statistical mechanics, thermodynamics, and physical computation</li>
+            <li>Topology, differential geometry, and category theory</li>
+            <li>Quantum information, entanglement, and error correction</li>
+            <li>Computational neuroscience, systems biology, and synthetic biology</li>
+            <li>Semiconductor physics, integrated photonics, and hardware architectures</li>
+            <li>Scientific computing, numerical methods, inverse problems, and model validation</li>
+          </ol></div>
+          <div><h2>Three companion guides</h2><ul>
+            <li>The Greek alphabet in mathematical and scientific notation</li>
+            <li>Biochemistry to AI-assisted CRISPR</li>
+            <li>Strategy, Character, and a Life Well Lived</li>
+          </ul></div>
+        </div>
+      </details>
+      <section class="entry" id="mathematics" aria-labelledby="mathematics-title">
+        <div><p class="label">Mathematical language</p><h2 id="mathematics-title">What stays the same when the coordinates change?</h2></div>
+        <div class="text"><p>Draw an arrow on paper and rotate the grid beneath it. The numbers describing the arrow change, even though the arrow still points the same way. The mathematics guides use distinctions like this to connect notation with the objects it describes. The Greek alphabet companion makes a similar point on a smaller scale. The same letter can mean different things in different equations.</p><p class="reading"><a href="https://linear.axler.net/">Linear Algebra Done Right</a><small>Sheldon Axler</small></p></div>
+      </section>
+      <section class="entry" id="information" aria-labelledby="information-title">
+        <div><p class="label">Information theory</p><h2 id="information-title">How can a noisy channel carry a reliable message?</h2></div>
+        <div class="text"><p>Suppose a sender uses 000 for “off” and 111 for “on.” If the receiver sees 101 and knows that at most one bit changed, it can recover “on.” The extra bits cost something, but they let the receiver correct an error. That tradeoff is an entry point into coding theory and Shannon’s work on communication.</p><p class="reading"><a href="https://web.mit.edu/6.441/spring05/reading/shannon1948.pdf">A Mathematical Theory of Communication (PDF)</a><small>Claude E. Shannon</small></p></div>
+      </section>
+      <section class="entry" id="feedback" aria-labelledby="feedback-title">
+        <div><p class="label">Dynamics &amp; control</p><h2 id="feedback-title">Why does a correction sometimes make things worse?</h2></div>
+        <div class="text"><p>Picture a shower whose temperature responds a few seconds after you turn the tap. Before the first adjustment takes effect, you turn it again and overshoot. The dynamics and control guides ask how delay and the size of a correction affect whether a system settles or keeps oscillating.</p><p class="reading"><a href="https://fbsbook.org/">Feedback Systems</a><small>Karl J. Åström and Richard M. Murray</small></p></div>
+      </section>
+      <section class="entry" id="evidence" aria-labelledby="evidence-title">
+        <div><p class="label">Inference &amp; model validation</p><h2 id="evidence-title">What would earn a model your confidence?</h2></div>
+        <div class="text"><p>A curve can pass through every measurement used to fit it. Set aside some observations before fitting, and you can ask how well the curve predicts them. The statistics and scientific computing guides also ask how accurately the calculation solves the equations and how well those equations describe the thing being measured.</p><p class="reading"><a href="https://www.statlearning.com/">An Introduction to Statistical Learning</a><small>Gareth James and coauthors</small></p></div>
+      </section>
+      <section class="entry" id="judgment" aria-labelledby="judgment-title">
+        <div><p class="label">Strategy &amp; character</p><h2 id="judgment-title">Which part of a decision belongs to you?</h2></div>
+        <div class="text"><p>You can prepare a talk carefully and still meet a skeptical audience. Epictetus asks which part of that experience is yours to direct. The personal study workbook sets that question alongside Machiavelli on reading circumstances, Marcus Aurelius on judgment, and Seneca on the use of time.</p><p class="reading"><a href="https://classics.mit.edu/Epictetus/epicench.html">The Enchiridion</a><small>Epictetus, translated by Elizabeth Carter</small></p></div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap"><a href="index.html#creative">Back to Creative &amp; Educational</a><span>Nigel Patch · Nigelæn Research</span></div></footer>
+</body>
+</html>
