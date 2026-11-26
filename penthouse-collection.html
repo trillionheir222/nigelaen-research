@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electric Saints &amp; Modern Mythologies — The Penthouse Collection</title>
+  <meta name="description" content="Eight contemporary artworks selected by Nigel Patch for one residential collection. Explore all eight works, five room studies, and the private-sale offering.">
+  <style>
+    :root {
+      --ink: #18211d;
+      --paper: #f5f3ed;
+      --line: #c6c7bb;
+      --muted: #535b53;
+      --dark: #202d27;
+      --accent: #d7fb64;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1.06rem/1.6 Arial, sans-serif; }
+    h1, h2, h3, p, figure { margin: 0; }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid #948039; outline-offset: 4px; }
+    .skip { position: absolute; top: -6rem; left: 1rem; z-index: 2; padding: .7rem; color: var(--ink); background: var(--accent); }
+    .skip:focus { top: .4rem; }
+    header, footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1rem 5vw; }
+    header { border-bottom: 1px solid var(--line); }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; font: bold .8rem/1.25 monospace; letter-spacing: .1em; text-decoration: none; }
+    .brand b { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border: 1px solid; border-radius: 50%; font: italic 1.65rem var(--serif); }
+    nav, .actions { display: flex; flex-wrap: wrap; gap: .8rem 1.3rem; align-items: center; }
+    nav { font-size: .95rem; }
+    .inner { max-width: 86rem; margin-inline: auto; }
+    section { padding: clamp(2.75rem, 6vw, 5.7rem) max(5vw, 1.25rem); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; line-height: 1.04; }
+    h1 { font-size: clamp(3rem, 4.75vw, 5.6rem); margin-block: 1.1rem; }
+    h1 em { display: block; }
+    h2 { font-size: clamp(2.25rem, 3.75vw, 3.9rem); }
+    h3 { font-size: clamp(1.45rem, 2vw, 2.1rem); }
+    cite { font-family: var(--serif); }
+    .eyebrow { font: .88rem/1.4 monospace; letter-spacing: .09em; text-transform: uppercase; }
+    .hero { padding-block: clamp(2rem, 4.4vw, 4.5rem); }
+    .opening { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+    .intro { max-width: 35rem; }
+    .intro .byline { margin-bottom: 1.3rem; color: var(--muted); }
+    .actions { margin-top: 1.5rem; font-size: .95rem; }
+    .button { display: inline-block; text-decoration: none; padding: .65rem 1rem; color: var(--paper); background: var(--dark); }
+    .button:hover { text-decoration: underline; }
+    .image-link { display: block; cursor: zoom-in; }
+    img { display: block; width: 100%; height: auto; }
+    .hero figcaption, .rooms figcaption { font-size: .95rem; margin-top: .5rem; }
+    .heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1rem 3rem; align-items: end; margin-bottom: 2rem; }
+    .heading p { max-width: 40rem; }
+    .works { border-top: 1px solid var(--line); }
+    .group-name { margin: 1.5rem 0 1rem; font: 1.25rem/1.35 var(--serif); }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+    .work .image-link { background: #e6e3d9; padding: .65rem; }
+    .work img { height: auto; aspect-ratio: 1 / 1; object-fit: contain; }
+    .work figcaption { padding-top: .8rem; }
+    .work figcaption p { font-size: 1rem; }
+    .work .spec { color: var(--muted); font: .88rem/1.6 monospace; }
+    .group-intro { margin: 2.6rem 0 1.3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); max-width: 58rem; }
+    .group-intro .group-name { margin: 0 0 .5rem; }
+    .rooms { background: var(--dark); color: var(--paper); }
+    .room-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem; }
+    .rooms .image-link { background: #16211d; }
+    .rooms img { aspect-ratio: 3 / 2; object-fit: contain; }
+    .sale .inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1.5rem 3rem; }
+    .sale h2 { margin-top: .65rem; }
+    .sale p + p { margin-top: 1rem; }
+    footer { border-top: 1px solid var(--line); font-size: .9rem; }
+    dialog { border: 0; margin: auto; padding: .85rem; background: var(--ink); color: var(--paper); width: min(96vw, 90rem); max-height: 96vh; }
+    dialog::backdrop { background: rgb(8 13 11 / .88); }
+    .viewer-top, .viewer-bottom { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+    .viewer-top { margin-bottom: .6rem; }
+    .viewer-top h2 { font-size: 1.25rem; letter-spacing: 0; }
+    .viewer-bottom { margin-top: .6rem; }
+    dialog button { background: transparent; color: inherit; border: 1px solid #bac3b8; padding: .45rem .75rem; font: inherit; cursor: pointer; }
+    dialog img { height: min(74vh, 64rem); object-fit: contain; }
+    @media (max-width: 860px) {
+      .opening, .heading, .sale .inner { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .intro { max-width: 42rem; }
+    }
+    @media (max-width: 540px) {
+      .room-grid { grid-template-columns: 1fr; }
+      .grid { gap: 1.2rem .75rem; }
+      .work .image-link { padding: .3rem; }
+      .work .spec { font-size: .82rem; }
+      .rooms img { aspect-ratio: auto; max-height: 72vh; }
+      nav { gap: .8rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <a class="brand" href="index.html" aria-label="Nigelæn Research home"><b>N</b><span>NIGELÆN<br>RESEARCH</span></a>
+    <nav aria-label="Collection"><a href="#works">Artworks</a><a href="#rooms">Room studies</a><a href="#acquisition">Private sale</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <div class="opening inner">
+        <div class="intro">
+          <p class="eyebrow">The Penthouse Collection</p>
+          <h1 id="title">Electric Saints <em>&amp; Modern Mythologies</em></h1>
+          <p class="byline">Curated by Nigel Patch</p>
+          <p>Four faces along a corridor set the rhythm for a collection of eight paintings. Across the rooms, the gaze shifts from a white owl to an imagined creature, a portrait in saturated color, and a Berlin street.</p>
+          <div class="actions"><a class="button" href="#works">View the eight works</a><a href="#acquisition">Private sale details</a></div>
+        </div>
+        <figure id="ascension-room">
+          <a class="image-link" href="assets/penthouse-collection/room-ascension-series.webp" data-caption="Ascension Series · corridor placement study" aria-label="Enlarge Ascension Series · corridor placement study">
+              <img src="assets/penthouse-collection/room-ascension-series.webp" width="1536" height="1024" alt="Four square paintings hang in a row above a bench in a long, light-filled corridor." fetchpriority="high" decoding="async">
+            </a>
+          <figcaption>Hallway placement study · Casey Brookbush’s <cite>Ascension Series</cite></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="works" id="works" aria-labelledby="works-title">
+      <div class="inner">
+        <div class="heading"><h2 id="works-title">The eight works</h2><p>Patch built the collection around Casey Brookbush’s four square paintings from 2020. Brookbush confirms that the four belong together. Seen in sequence, a familiar face shifts by degrees until the final image looks straight back at the viewer.</p></div>
+        <h3 class="group-name">Casey Brookbush · Ascension Series</h3>
+        <div class="grid">
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/orgasm-i.webp" data-caption="Orgasm I — Casey Brookbush" aria-label="Enlarge Orgasm I — Casey Brookbush">
+              <img src="assets/penthouse-collection/orgasm-i.webp" width="1793" height="1800" alt="A pale face in close-up with black lashes, red lips, and a sliver of blue." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Orgasm I</cite></h3><p>Casey Brookbush</p><p class="spec">2020 · 24 × 24 in</p></figcaption>
+          </figure>
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/orgasm-ii.webp" data-caption="Orgasm II — Casey Brookbush" aria-label="Enlarge Orgasm II — Casey Brookbush">
+              <img src="assets/penthouse-collection/orgasm-ii.webp" width="1797" height="1800" alt="Overlapping faces with closed eyes, gold eyelids, and red lips." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Orgasm II</cite></h3><p>Casey Brookbush</p><p class="spec">2020 · 24 × 24 in</p></figcaption>
+          </figure>
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/orgasm-iii.webp" data-caption="Orgasm III — Casey Brookbush" aria-label="Enlarge Orgasm III — Casey Brookbush">
+              <img src="assets/penthouse-collection/orgasm-iii.webp" width="1798" height="1800" alt="Fragments of pale faces turn at different angles around dark red lips." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Orgasm III</cite></h3><p>Casey Brookbush</p><p class="spec">2020 · 24 × 24 in</p></figcaption>
+          </figure>
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/ecstasy.webp" data-caption="Ecstasy — Casey Brookbush" aria-label="Enlarge Ecstasy — Casey Brookbush">
+              <img src="assets/penthouse-collection/ecstasy.webp" width="1800" height="1796" alt="A black-and-white face with repeated green eyes and turquoise lips." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Ecstasy</cite></h3><p>Casey Brookbush</p><p class="spec">2020 · 24 × 24 in</p></figcaption>
+          </figure>
+        </div>
+        <div class="group-intro"><h3 class="group-name">Beyond the series</h3>
+          <p>Brookbush carries the figure into a night sky in <cite>NIGHTOWL IV</cite>. Ward’s <cite>Quadrupus</cite> lets the color fall away entirely. Shapiro brings it back in a small, intensely colored portrait. With <cite>Berlin</cite>, Nunn draws the eye past the picture plane and down a street.</p>
+        </div>
+        <div class="grid">
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/nightowl-iv.webp" data-caption="NIGHTOWL IV — Casey Brookbush" aria-label="Enlarge NIGHTOWL IV — Casey Brookbush">
+              <img src="assets/penthouse-collection/nightowl-iv.webp" width="1343" height="1800" alt="A dark-haired figure holds a white owl against a star-filled blue sky." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>NIGHTOWL IV</cite></h3><p>Casey Brookbush</p><p class="spec">2011 · 30 × 40 in</p></figcaption>
+          </figure>
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/quadrupus.webp" data-caption="Quadrupus — Ryan Henry Ward" aria-label="Enlarge Quadrupus — Ryan Henry Ward">
+              <img src="assets/penthouse-collection/quadrupus.webp" width="1777" height="1800" alt="A grayscale tentacled creature with a central face and branching, fish-like forms." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Quadrupus</cite></h3><p>Ryan Henry Ward</p><p class="spec">2020 · 36 × 36 in</p></figcaption>
+          </figure>
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/woman-in-blue-and-purple.webp" data-caption="Woman in Blue &amp; Purple — Martina Shapiro" aria-label="Enlarge Woman in Blue &amp; Purple — Martina Shapiro">
+              <img src="assets/penthouse-collection/woman-in-blue-and-purple.webp" width="1426" height="1800" alt="A woman's face built from saturated planes of blue, purple, red, and green." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Woman in Blue &amp; Purple</cite></h3><p>Martina Shapiro</p><p class="spec">2017 · 16 × 20 in</p></figcaption>
+          </figure>
+          <figure class="work">
+            <a class="image-link" href="assets/penthouse-collection/berlin.webp" data-caption="Berlin — Paul Nunn" aria-label="Enlarge Berlin — Paul Nunn">
+              <img src="assets/penthouse-collection/berlin.webp" width="1504" height="1800" alt="A city street in blue, white, and gray recedes between tall buildings." loading="lazy" decoding="async">
+            </a>
+            <figcaption><h3><cite>Berlin</cite></h3><p>Paul Nunn</p><p class="spec">2005 · 36 × 30 in</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms" id="rooms" aria-labelledby="rooms-title">
+      <div class="inner">
+        <div class="heading"><h2 id="rooms-title">In the residence</h2><p>The <a href="#ascension-room">corridor study</a> groups the four squares on one wall. These four mock-ups give each remaining work a room of its own and show its scale beside a stairway, a bed, a sofa, or a console.</p></div>
+        <div class="room-grid">
+          <figure>
+            <a class="image-link" href="assets/penthouse-collection/room-nightowl-iv.webp" data-caption="NIGHTOWL IV · residential placement study" aria-label="Enlarge NIGHTOWL IV · residential placement study">
+              <img src="assets/penthouse-collection/room-nightowl-iv.webp" width="1536" height="1024" alt="A blue portrait of a woman with an owl hangs beside a lounge chair in a softly lit bedroom." loading="lazy" decoding="async">
+            </a>
+            <figcaption><cite>NIGHTOWL IV</cite> · Residential placement study</figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="assets/penthouse-collection/room-quadrupus.webp" data-caption="Quadrupus · residential placement study" aria-label="Enlarge Quadrupus · residential placement study">
+              <img src="assets/penthouse-collection/room-quadrupus.webp" width="1536" height="1024" alt="A large black-and-white creature painting hangs across from a sofa in a dark reading room." loading="lazy" decoding="async">
+            </a>
+            <figcaption><cite>Quadrupus</cite> · Residential placement study</figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="assets/penthouse-collection/room-woman-in-blue-and-purple.webp" data-caption="Woman in Blue &amp; Purple · residential placement study" aria-label="Enlarge Woman in Blue &amp; Purple · residential placement study">
+              <img src="assets/penthouse-collection/room-woman-in-blue-and-purple.webp" width="1122" height="1402" alt="A small, brightly colored portrait on a pale wall at a stair landing." loading="lazy" decoding="async">
+            </a>
+            <figcaption><cite>Woman in Blue &amp; Purple</cite> · Residential placement study</figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="assets/penthouse-collection/room-berlin.webp" data-caption="Berlin · residential placement study" aria-label="Enlarge Berlin · residential placement study">
+              <img src="assets/penthouse-collection/room-berlin.webp" width="1536" height="1024" alt="A blue cityscape hangs over a console beside an open doorway." loading="lazy" decoding="async">
+            </a>
+            <figcaption><cite>Berlin</cite> · Residential placement study</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sale" id="acquisition" aria-labelledby="sale-title">
+      <div class="inner">
+        <div><p class="eyebrow">Private sale · Price on request</p><h2 id="sale-title">Acquire the collection</h2></div>
+        <div><p>Nigel Patch offers all eight works together in a single private sale. Collectors, art advisors, and residential designers can request pricing and the full presentation dossier directly from him.</p>
+          <p>The dossier records each work’s dimensions and ownership history and includes provenance confirmations from all four artists. Ward identifies <cite>Quadrupus</cite> as the headlining work of his <cite>Power of Grayscale</cite> showcase, where Patch acquired it.</p>
+          <div class="actions"><a class="button" href="mailto:nigel@prismaeon.com?subject=Electric%20Saints%20%26%20Modern%20Mythologies%20%E2%80%94%20collection%20inquiry">Inquire about the collection</a><a href="mailto:nigel@prismaeon.com?subject=Electric%20Saints%20%26%20Modern%20Mythologies%20%E2%80%94%20collection%20inquiry">nigel@prismaeon.com</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><span>Nigel Patch · The Penthouse Collection</span><a href="index.html#creative">Creative &amp; Educational</a></footer>
+  <dialog aria-labelledby="viewer-caption" id="viewer">
+    <div class="viewer-top"><h2 id="viewer-caption" aria-live="polite"></h2><button type="button" id="close-viewer" autofocus>Close</button></div>
+    <img id="viewer-image" alt="">
+    <div class="viewer-bottom"><button type="button" id="previous">Previous</button><span id="position"></span><button type="button" id="next">Next</button></div>
+  </dialog>
+  <script>
+    const links = Array.from(document.querySelectorAll('.image-link'));
+    const viewer = document.getElementById('viewer');
+    const photo = document.getElementById('viewer-image');
+    const caption = document.getElementById('viewer-caption');
+    const position = document.getElementById('position');
+    let active = 0;
+
+    function display(index) {
+      active = (index + links.length) % links.length;
+      const link = links[active];
+      photo.src = link.href;
+      photo.alt = link.querySelector('img').alt;
+      caption.textContent = link.dataset.caption;
+      position.textContent = (active + 1) + ' of ' + links.length;
+    }
+
+    if (typeof viewer.showModal === 'function') {
+      links.forEach((link, index) => {
+        link.addEventListener('click', event => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          display(index);
+          viewer.showModal();
+        });
+      });
+      document.getElementById('close-viewer').addEventListener('click', () => viewer.close());
+      document.getElementById('previous').addEventListener('click', () => display(active - 1));
+      document.getElementById('next').addEventListener('click', () => display(active + 1));
+      viewer.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          display(active + (event.key === 'ArrowRight' ? 1 : -1));
+        }
+      });
+    }
+  </script>
+</body>
+</html>

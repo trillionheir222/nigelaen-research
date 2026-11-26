@@ -290,6 +290,21 @@
         margin-top: .65rem;
         font: .94rem/1.4 var(--sans, Arial, sans-serif);
       }
+      .collection-feature {
+        display: grid;
+        grid-template-columns: minmax(12rem, 1fr) minmax(0, 2fr);
+        align-items: center;
+        gap: clamp(1.25rem, 3vw, 3.5rem);
+        padding: 1rem;
+        margin: 0 0 1.5rem;
+        border: 1px solid #ffffff65;
+        color: inherit;
+        text-decoration: none;
+      }
+      .collection-feature img { display: block; width: 100%; height: auto; }
+      .collection-feature strong { display: block; margin: .4rem 0; font: clamp(1.7rem, 3vw, 3rem)/1.04 var(--serif); }
+      .collection-feature:hover strong, .collection-feature:focus-visible strong { text-decoration: underline; }
+      @media (max-width: 620px) { .collection-feature { grid-template-columns: 1fr; } }
       .items {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -694,6 +709,13 @@
             practices—not empirical evidence for technical programs.
           </p>
         </div>
+        <a class="collection-feature" href="penthouse-collection.html">
+          <img src="assets/penthouse-collection/room-ascension-series.webp" width="1536" height="1024" loading="lazy" alt="Four paintings from the Ascension Series grouped along a corridor.">
+          <span><span class="label">The Penthouse Collection · Private sale</span>
+            <strong>Electric Saints &amp; Modern Mythologies</strong>
+            Eight paintings by four artists, curated by Nigel Patch for one residential collection.
+          </span>
+        </a>
         <div class="items">
           <p>
             <a href="the-things-we-need.html">The Things We Need</a>
