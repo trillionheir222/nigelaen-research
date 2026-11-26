@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An archived experiment by Nigel Patch in assigning specialized jobs to AI agents and coordinating the work between them.">
+  <title>NigelOS — Lessons from an archived agent experiment | Nigelæn Research</title>
+  <style>
+    :root { color-scheme: light; --paper: #f4f1e8; --ink: #192321; --accent: #e1ebd3; --band: #213b36; --rule: #b9b9aa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1.0625rem/1.6 Arial, sans-serif; }
+    h1, h2, h3, p, dl, dd, figure { margin: 0; }
+    h1, h2, h3 { font: normal 2rem/1.08 Georgia, serif; letter-spacing: -.04em; }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #9069c2; outline-offset: 4px; }
+    .skip { position: absolute; top: -10rem; left: 1rem; background: var(--paper); color: var(--ink); padding: .6rem; z-index: 2; }
+    .skip:focus { top: .5rem; }
+    .wrap { width: min(90%, 72rem); margin-inline: auto; }
+    header .wrap, footer .wrap, nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.2rem; }
+    header .wrap, footer .wrap { padding-block: 1rem; }
+    header, footer, .label { font-size: .94rem; }
+    .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font: bold .8rem/1.2 monospace; letter-spacing: .08em; }
+    .brand b { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid; border-radius: 50%; font: italic 1.6rem Georgia, serif; }
+    .hero { color: var(--paper); background: var(--band); padding-block: clamp(3.5rem, 8vw, 7rem); }
+    .hero .label { color: var(--accent); }
+    .label { font-family: monospace; letter-spacing: .07em; text-transform: uppercase; }
+    h1 { font-size: clamp(3.9rem, 9vw, 7.4rem); margin: .6rem 0 1rem; }
+    .lead { font: clamp(1.3rem, 2.4vw, 1.85rem)/1.4 Georgia, serif; max-width: 36em; }
+    .piece { padding-block: clamp(2.4rem, 5vw, 4.4rem); border-bottom: 1px solid var(--rule); }
+    .split { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.2fr); gap: 1.2rem clamp(2rem, 6vw, 6rem); align-items: start; }
+    h2 { font-size: clamp(2.05rem, 4vw, 3.35rem); max-width: 19ch; }
+    .piece p { max-width: 63ch; }
+    .piece p + p { margin-top: .85rem; }
+    .paper-inset { background: var(--accent); }
+    .archive { --band: #403a35; --accent: #e7dccb; }
+    @media (max-width: 48rem) { .split { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="archive">
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap">
+    <a class="brand" href="index.html" aria-label="Nigelæn Research home"><b aria-hidden="true">N</b><span>NIGELÆN<br>RESEARCH</span></a>
+    <nav aria-label="Portfolio"><a href="index.html#engineering">Computing &amp; Engineering</a><a href="research-release-board.html">Release Board</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="project"><div class="wrap">
+      <p class="label">Engineering retrospective · Archived experiment</p>
+      <h1 id="project">NigelOS</h1>
+      <p class="lead">Nigel Patch gave AI agents different jobs to see whether a group of specialists could carry a task from one person’s request to a usable result. The project taught him how much of that work happens during the handoff between jobs.</p>
+    </div></section>
+    <section class="piece" aria-labelledby="experiment"><div class="wrap split">
+      <h2 id="experiment">What Patch tried</h2>
+      <div>
+        <p>A request could be divided among specialists, each with its own instructions. Some parts ran within a working session. Across sessions, decisions and unfinished work depended on a written record that had to be kept current. Patch eventually archived the experiment.</p>
+      </div>
+    </div></section>
+    <section class="piece paper-inset" aria-labelledby="handoff"><div class="wrap split">
+      <h2 id="handoff">The handoff problem</h2>
+      <div>
+        <p>Imagine one specialist drafts a research note and another spots an unsupported claim. Someone has to return the note for revision, preserve the reason for the change, and check the corrected version. Writing “reviewer” on a job description settles none of those questions.</p>
+        <p>This example captures a lesson from NigelOS. Dividing a task is relatively easy. Making responsibility clear when work changes hands takes design of its own.</p>
+      </div>
+    </div></section>
+    <section class="piece" aria-labelledby="lesson"><div class="wrap split">
+      <h2 id="lesson">What carried forward</h2>
+      <div>
+        <p>NigelOS sharpened the questions Patch brought to later work. What does the next person or agent need to know? Which decision should survive into a new session? Who can judge that the work is ready? Those questions about coordination and memory are the reason he keeps NigelOS in the engineering archive.</p>
+      </div>
+    </div></section>
+  </main>
+  <footer><div class="wrap"><a href="index.html#engineering">Back to Computing &amp; Engineering</a><span>Nigel Patch · Nigelæn Research</span></div></footer>
+</body>
+</html>

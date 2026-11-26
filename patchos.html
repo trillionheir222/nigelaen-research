@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nigel Patch’s private experimental reasoning prototype explores how evidence changes which explanations and possible futures remain viable.">
+  <title>PatchOS — Reasoning under changing constraints | Nigelæn Research</title>
+  <style>
+    :root { color-scheme: light; --paper: #f4f1e8; --ink: #192321; --accent: #e1ebd3; --band: #213b36; --rule: #b9b9aa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1.0625rem/1.6 Arial, sans-serif; }
+    h1, h2, h3, p, dl, dd, figure { margin: 0; }
+    h1, h2, h3 { font: normal 2rem/1.08 Georgia, serif; letter-spacing: -.04em; }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #9069c2; outline-offset: 4px; }
+    .skip { position: absolute; top: -10rem; left: 1rem; background: var(--paper); color: var(--ink); padding: .6rem; z-index: 2; }
+    .skip:focus { top: .5rem; }
+    .wrap { width: min(90%, 72rem); margin-inline: auto; }
+    header .wrap, footer .wrap, nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1.2rem; }
+    header .wrap, footer .wrap { padding-block: 1rem; }
+    header, footer, .label { font-size: .94rem; }
+    .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font: bold .8rem/1.2 monospace; letter-spacing: .08em; }
+    .brand b { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid; border-radius: 50%; font: italic 1.6rem Georgia, serif; }
+    .hero { color: var(--paper); background: var(--band); padding-block: clamp(3.5rem, 8vw, 7rem); }
+    .hero .label { color: var(--accent); }
+    .label { font-family: monospace; letter-spacing: .07em; text-transform: uppercase; }
+    h1 { font-size: clamp(3.9rem, 9vw, 7.4rem); margin: .6rem 0 1rem; }
+    .lead { font: clamp(1.3rem, 2.4vw, 1.85rem)/1.4 Georgia, serif; max-width: 36em; }
+    .piece { padding-block: clamp(2.4rem, 5vw, 4.4rem); border-bottom: 1px solid var(--rule); }
+    .split { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.2fr); gap: 1.2rem clamp(2rem, 6vw, 6rem); align-items: start; }
+    h2 { font-size: clamp(2.05rem, 4vw, 3.35rem); max-width: 19ch; }
+    .piece p { max-width: 63ch; }
+    .piece p + p { margin-top: .85rem; }
+    .paper-inset { background: var(--accent); }
+    .archive { --band: #403a35; --accent: #e7dccb; }
+    @media (max-width: 48rem) { .split { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap">
+    <a class="brand" href="index.html" aria-label="Nigelæn Research home"><b aria-hidden="true">N</b><span>NIGELÆN<br>RESEARCH</span></a>
+    <nav aria-label="Portfolio"><a href="index.html#engineering">Computing &amp; Engineering</a><a href="research-release-board.html">Release Board</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="project"><div class="wrap">
+      <p class="label">Experimental reasoning · Private prototype</p>
+      <h1 id="project">PatchOS</h1>
+      <p class="lead">What would have to stay true for a possible future to remain within reach? Nigel Patch developed PatchOS to explore how a computer might keep several possibilities in view and revise them as evidence changes.</p>
+    </div></section>
+    <section class="piece" aria-labelledby="motivation"><div class="wrap split">
+      <h2 id="motivation">A computational “crystal ball”</h2>
+      <div>
+        <p>Patch’s original image for the project was a crystal ball. What interested him was the part a forecast usually leaves out. If two outcomes both seem plausible, which assumption separates them? What new observation would give someone a reason to change their mind?</p>
+        <p>An explanation can survive every check so far and still be wrong. Keeping its assumptions visible gives a researcher somewhere to look next.</p>
+      </div>
+    </div></section>
+    <section class="piece paper-inset" aria-labelledby="example"><div class="wrap split">
+      <h2 id="example">Two routes before dusk</h2>
+      <div>
+        <p>Imagine a field team trying to reach an island before dusk. It can take the ferry or walk across a causeway at low tide. A cancellation rules out the ferry. The causeway remains a possibility, but only if the tide stays low long enough for the crossing.</p>
+        <p>Learning that the causeway was open tells us the team <em>could</em> have crossed. To say it <em>did</em> cross requires another observation. This imagined case illustrates the distinction PatchOS was designed to preserve.</p>
+      </div>
+    </div></section>
+    <section class="piece" aria-labelledby="implementation"><div class="wrap split">
+      <h2 id="implementation">Research status</h2>
+      <div>
+        <p>PatchOS exists as a private research prototype. Its purpose is to help a researcher keep track of competing explanations as the available evidence changes.</p>
+        <p>How well that approach works is a question for evaluation. A useful test would ask whether a researcher can tell which assumption changed a conclusion and what evidence would justify changing it again.</p>
+      </div>
+    </div></section>
+    <section class="piece" aria-labelledby="direction"><div class="wrap split">
+      <h2 id="direction">Where the question leads</h2>
+      <div>
+        <p>In scientific research, two explanations may fit the same evidence. A useful reasoning aid could help a researcher identify the observation that would distinguish them. That is one of the applications Patch is investigating.</p>
+        <p>A related question is how to turn information into useful judgment. Patch explores that question in his <a href="intelligence-as-flow.html">Theory of Regulated Intelligence Flow</a>. PatchOS gives that question a place in his experimental engineering work.</p>
+      </div>
+    </div></section>
+  </main>
+  <footer><div class="wrap"><a href="index.html#engineering">Back to Computing &amp; Engineering</a><span>Nigel Patch · Nigelæn Research</span></div></footer>
+</body>
+</html>
