@@ -144,6 +144,51 @@
         border-left: 3px solid var(--clay);
         padding-left: 18px;
       }
+      .hero .inner {
+        display: grid;
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 28%);
+        align-items: center;
+        gap: clamp(24px, 5vw, 78px);
+      }
+      .hero h1 {
+        font-size: clamp(3.2rem, 7.25vw, 6.85rem);
+        line-height: 0.95;
+      }
+      .hero .lede {
+        max-width: 26em;
+      }
+      .portrait,
+      .personal-crest img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .intro-portrait {
+        max-width: 320px;
+        justify-self: end;
+      }
+      .biography {
+        align-items: start;
+        row-gap: clamp(24px, 3.5vw, 48px);
+      }
+      .biography p:first-child {
+        margin-top: 0;
+      }
+      .biography p:last-child {
+        margin-bottom: 0;
+      }
+      .art-portrait {
+        max-width: 245px;
+      }
+      .personal-crest {
+        width: min(170px, 100%);
+        margin: 2rem 0 0;
+      }
+      .personal-crest figcaption {
+        margin-top: 8px;
+        font: 13px/1.4 var(--mono);
+      }
       .timeline {
         padding: 0 6vw clamp(5rem, 10vw, 10rem);
       }
@@ -353,6 +398,19 @@
         font: 12px var(--mono);
       }
       @media (max-width: 780px) {
+        .hero .inner {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: clamp(2.7rem, 10vw, 4.5rem);
+        }
+        .intro-portrait {
+          width: min(72%, 270px);
+          justify-self: start;
+        }
+        .art-portrait {
+          width: min(78%, 245px);
+        }
         nav {
           display: none;
         }
@@ -397,18 +455,22 @@
     <main id="main">
       <section class="hero">
         <div class="inner">
-          <p class="label">About Nigel Patch · Nigelæn</p>
-          <h1>Independent work,<br /><em>made legible.</em></h1>
-          <p class="lede">
-            Seattle-raised independent researcher, author, systems designer, and
-            artist working across formal systems, theoretical inquiry, adaptive
-            computation, visual atlases, and creative practice.
-          </p>
+          <div>
+            <p class="label">About Nigel Patch · Nigelæn</p>
+            <h1>Independent work,<br /><em>made legible.</em></h1>
+            <p class="lede">
+              Seattle-raised independent researcher, author, systems designer, and
+              artist working across formal systems, theoretical inquiry, adaptive
+              computation, visual atlases, and creative practice.
+            </p>
+          </div>
+          <img class="portrait intro-portrait" src="assets/about/nigel-patch-portrait.webp"
+            width="800" height="1198" alt="Portrait of Nigel Patch looking toward the camera." />
         </div>
       </section>
 
       <section class="section">
-        <div class="inner split">
+        <div class="inner split biography">
           <div>
             <p class="label">Biography</p>
             <h2>A self-directed path through research, enterprise, and art.</h2>
@@ -428,6 +490,11 @@
               through textbooks across disciplines, and building a practical,
               continually renewed personal curriculum.
             </p>
+          </div>
+          <img class="portrait art-portrait" src="assets/about/nigel-patch-outdoors.webp"
+            width="640" height="848" loading="lazy" decoding="async"
+            alt="Nigel Patch in mirrored sunglasses beside an angular metal sculpture." />
+          <div>
             <p>
               That learning path developed alongside work in enterprise and the
               arts. Patch founded Prismatii, his first successful company, and
@@ -448,6 +515,12 @@
               active research, conceptual work, and material held back for
               privacy, intellectual-property, or publication reasons.
             </p>
+            <figure class="personal-crest">
+              <img src="assets/about/nigel-patch-crest.webp" width="512" height="512"
+                loading="lazy" decoding="async"
+                alt="Gold quartered shield on a dark ground, framed by a helix, a trident, and a ribbon." />
+              <figcaption>Nigel Patch’s personal crest</figcaption>
+            </figure>
           </div>
         </div>
       </section>
