@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202633">
+  <title>Selected Artwork — Nigel Patch | Nigelæn Research</title>
+  <meta name="description" content="A personal selection of 54 images by Nigel Patch, from intertwined figure drawings and geometric studies to paintings, pendants, and imagined scenes.">
+  <style>
+    :root { color-scheme: light; --ink: #19221f; --paper: #f5f2ea; --line: #c2c2b7; --night: #202633; --silver: #d6def0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 1.0625rem/1.55 Arial, sans-serif; }
+    h1, h2, p, figure { margin: 0; }
+    h1, h2 { font: 400 2.8rem/1.06 Georgia, serif; letter-spacing: -.045em; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 3px solid #9377be; outline-offset: 3px; }
+    .wrap { width: min(91%,78rem); margin-inline: auto; }
+    .skip { position: absolute; top: -8rem; left: .7rem; z-index: 1; padding: .65rem; background: var(--paper); }
+    .skip:focus { top: .4rem; }
+    header .wrap, footer .wrap, header nav, .subjects { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem 1.35rem; }
+    header .wrap, footer .wrap { justify-content: space-between; padding-block: 1rem; }
+    header nav, footer { font-size: .94rem; }
+    .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font: bold .8rem/1.2 monospace; letter-spacing: .08em; }
+    .brand b { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border: 1px solid; border-radius: 50%; font: italic 1.6rem Georgia, serif; }
+    .hero { background: var(--night); color: var(--paper); }
+    .hero .wrap { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); align-items: center; gap: clamp(1.8rem, 5vw, 5.8rem); padding-block: clamp(2.4rem,5vw,4.8rem); }
+    .byline { font: .92rem/1.4 monospace; color: var(--silver); letter-spacing: .07em; text-transform: uppercase; }
+    h1 { font-size: clamp(3.6rem, 8vw, 7.8rem); margin: .75rem 0 1.35rem; line-height: .98; }
+    .lead { max-width: 32ch; font: clamp(1.28rem,2.15vw,1.75rem)/1.36 Georgia, serif; }
+    .subjects { margin-top: 1.65rem; max-width: 33rem; gap: .55rem 1.1rem; font-size: 1rem; }
+    .plate { position: relative; display: grid; place-items: center; cursor: zoom-in; background: #e7e5dd; color: white; }
+    .plate img { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: contain; display: block; }
+    .cover .plate { background: #151923; }
+    .cover img { max-height: 37rem; aspect-ratio: 1.1/1; }
+    .zoom { position: absolute; bottom: .55rem; right: .55rem; color: white; background: #252626; padding: .12rem .45rem; border: 1px solid #a3a4a0; font: .8rem/1.4 monospace; }
+    figcaption { margin-top: .6rem; font-size: .96rem; line-height: 1.42; }
+    .cover figcaption { color: var(--silver); }
+    .room { padding-block: clamp(2.75rem,5vw,5rem); border-bottom: 1px solid var(--line); scroll-margin: 1rem; }
+    .room:nth-of-type(odd) { background: #edece4; }
+    .room-head { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: end; gap: 1rem 3rem; margin-bottom: 1.75rem; }
+    .room-head h2 { font-size: clamp(2.35rem,4.5vw,4.15rem); max-width: 16ch; }
+    .room-head p { max-width: 52ch; }
+    .gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 2rem clamp(1rem,2vw,1.8rem); }
+    footer nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    dialog { width: min(95vw,76rem); max-height: 96vh; max-height: 96dvh; margin: auto; padding: .85rem; border: 1px solid #8d8f93; background: #191e25; color: var(--paper); }
+    dialog::backdrop { background: rgb(8 11 16 / 88%); }
+    dialog img { display: block; width: 100%; height: 64vh; height: 64dvh; object-fit: contain; background: #11151b; }
+    .view-controls { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin-bottom: .65rem; }
+    .position { margin-right: auto; font: .88rem/1.4 monospace; }
+    button { padding: .4rem .75rem; color: inherit; font: inherit; background: transparent; border: 1px solid #aaafad; cursor: pointer; }
+    button:disabled { opacity: .45; cursor: default; }
+    @media (max-width: 54rem) { .gallery { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 44rem) {
+      .hero .wrap, .room-head { grid-template-columns: 1fr; }
+      .cover img { max-height: 31rem; }
+      .subjects { margin-top: 1.1rem; }
+    }
+    @media (max-width: 30rem) {
+      .gallery { grid-template-columns: 1fr; }
+      .gallery img { aspect-ratio: auto; max-height: 66vh; }
+      .view-controls { gap: .45rem; }
+      button { padding: .45rem; font-size: .94rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap">
+    <a class="brand" href="index.html" aria-label="Nigelæn Research home"><b aria-hidden="true">N</b><span>NIGELÆN<br>RESEARCH</span></a>
+    <nav aria-label="Portfolio"><a href="index.html#creative">Creative &amp; Educational</a><a href="research-release-board.html">Release Board</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title"><div class="wrap">
+      <div><p class="byline">Nigel Patch · Visual art</p><h1 id="page-title">Selected<br><em>Artwork</em></h1>
+        <p class="lead">A body becomes the spoke of a wheel. Hands close around a globe or meet at the center of a necklace. These drawings, paintings, and objects trace the forms that recur in Patch’s visual work.</p>
+        <nav class="subjects" aria-label="Browse artwork by subject">
+          <a href="#figures">Bodies in formation</a>
+          <a href="#geometry">Geometry and motion</a>
+          <a href="#symbols">Hands, eyes and emblems</a>
+          <a href="#scenes">Portraits and imagined scenes</a>
+        </nav>
+      </div>
+      <figure class="cover">
+          <a class="plate" href="assets/selected-artwork/1632.webp" aria-label="Enlarge artwork. Intertwined figures arc between a dark disk and a full moon.">
+            <img src="assets/selected-artwork/1632.webp" width="1253" height="1560" fetchpriority="high" decoding="async" alt="Intertwined figures arc between a dark disk and a full moon.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Intertwined figures arc between a dark disk and a full moon.</figcaption>
+        </figure>
+    </div></section>
+    <section class="room" id="figures" aria-labelledby="figures-title"><div class="wrap">
+      <div class="room-head"><h2 id="figures-title">Bodies in formation</h2><p>Look for the spaces between the limbs. In these drawings, those gaps often determine the shape of the whole group.</p></div>
+      <div class="gallery">
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1578.webp" aria-label="Enlarge artwork. Four linked figures stretch outward from a small, four-sided opening.">
+            <img src="assets/selected-artwork/1578.webp" width="1320" height="1313" loading="lazy" decoding="async" alt="Four linked figures stretch outward from a small, four-sided opening.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Four linked figures stretch outward from a small, four-sided opening.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1635.webp" aria-label="Enlarge artwork. Reclining bodies form a table-like structure above a tiled floor.">
+            <img src="assets/selected-artwork/1635.webp" width="1320" height="833" loading="lazy" decoding="async" alt="Reclining bodies form a table-like structure above a tiled floor.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Reclining bodies form a table-like structure above a tiled floor.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1600.webp" aria-label="Enlarge artwork. A folded body threads through interlocking triangular frames.">
+            <img src="assets/selected-artwork/1600.webp" width="1179" height="1255" loading="lazy" decoding="async" alt="A folded body threads through interlocking triangular frames.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A folded body threads through interlocking triangular frames.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1588.webp" aria-label="Enlarge artwork. Bent limbs surround a five-pointed star.">
+            <img src="assets/selected-artwork/1588.webp" width="1320" height="1312" loading="lazy" decoding="async" alt="Bent limbs surround a five-pointed star.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Bent limbs surround a five-pointed star.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1599.webp" aria-label="Enlarge artwork. A spiral passes through a ring of lightly drawn figures.">
+            <img src="assets/selected-artwork/1599.webp" width="1313" height="1227" loading="lazy" decoding="async" alt="A spiral passes through a ring of lightly drawn figures.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A spiral passes through a ring of lightly drawn figures.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1581.webp" aria-label="Enlarge artwork. Successive outlines fan outward from a central figure.">
+            <img src="assets/selected-artwork/1581.webp" width="1208" height="1560" loading="lazy" decoding="async" alt="Successive outlines fan outward from a central figure.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Successive outlines fan outward from a central figure.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1592.webp" aria-label="Enlarge artwork. Mirrored profiles and torsos meet at the edges of the drawing.">
+            <img src="assets/selected-artwork/1592.webp" width="1320" height="1119" loading="lazy" decoding="async" alt="Mirrored profiles and torsos meet at the edges of the drawing.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Mirrored profiles and torsos meet at the edges of the drawing.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1613.webp" aria-label="Enlarge artwork. A seated figure occupies the center of a circle of bodies.">
+            <img src="assets/selected-artwork/1613.webp" width="1284" height="1315" loading="lazy" decoding="async" alt="A seated figure occupies the center of a circle of bodies.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A seated figure occupies the center of a circle of bodies.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1602.webp" aria-label="Enlarge artwork. A folded figure balances between pans marked with the moon and sun.">
+            <img src="assets/selected-artwork/1602.webp" width="942" height="1229" loading="lazy" decoding="async" alt="A folded figure balances between pans marked with the moon and sun.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A folded figure balances between pans marked with the moon and sun.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1621.webp" aria-label="Enlarge artwork. Small figures orbit a striped sphere inside a broad white margin.">
+            <img src="assets/selected-artwork/1621.webp" width="1092" height="1260" loading="lazy" decoding="async" alt="Small figures orbit a striped sphere inside a broad white margin.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Small figures orbit a striped sphere inside a broad white margin.</figcaption>
+        </figure>
+      </div>
+    </div></section>
+    <section class="room" id="geometry" aria-labelledby="geometry-title"><div class="wrap">
+      <div class="room-head"><h2 id="geometry-title">Geometry and motion</h2><p>A spiral can read as a surface, a path, or a measure of time. Follow a single line to see where the reading changes.</p></div>
+      <div class="gallery">
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1615.webp" aria-label="Enlarge artwork. A broad dark band wraps around a sphere of finely divided curves.">
+            <img src="assets/selected-artwork/1615.webp" width="1320" height="1319" loading="lazy" decoding="async" alt="A broad dark band wraps around a sphere of finely divided curves.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A broad dark band wraps around a sphere of finely divided curves.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1593.webp" aria-label="Enlarge artwork. Arrows pierce a ringed globe balanced on a small stand.">
+            <img src="assets/selected-artwork/1593.webp" width="1320" height="1315" loading="lazy" decoding="async" alt="Arrows pierce a ringed globe balanced on a small stand.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Arrows pierce a ringed globe balanced on a small stand.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1580.webp" aria-label="Enlarge artwork. A braided line turns through a circle and opens around a triangular center.">
+            <img src="assets/selected-artwork/1580.webp" width="1320" height="1315" loading="lazy" decoding="async" alt="A braided line turns through a circle and opens around a triangular center.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A braided line turns through a circle and opens around a triangular center.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1629.webp" aria-label="Enlarge artwork. Stepped outlines fold around a lattice of intersecting planes.">
+            <img src="assets/selected-artwork/1629.webp" width="1012" height="1019" loading="lazy" decoding="async" alt="Stepped outlines fold around a lattice of intersecting planes.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Stepped outlines fold around a lattice of intersecting planes.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1612.webp" aria-label="Enlarge artwork. Spiraling clock faces curl past opposite sides of an hourglass.">
+            <img src="assets/selected-artwork/1612.webp" width="1244" height="1240" loading="lazy" decoding="async" alt="Spiraling clock faces curl past opposite sides of an hourglass.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Spiraling clock faces curl past opposite sides of an hourglass.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1575.webp" aria-label="Enlarge artwork. Loops at either end stretch a central knot into a horizontal band.">
+            <img src="assets/selected-artwork/1575.webp" width="1189" height="550" loading="lazy" decoding="async" alt="Loops at either end stretch a central knot into a horizontal band.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Loops at either end stretch a central knot into a horizontal band.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1583.webp" aria-label="Enlarge artwork. Nested angular stars converge on a tightly crossed center.">
+            <img src="assets/selected-artwork/1583.webp" width="1299" height="1328" loading="lazy" decoding="async" alt="Nested angular stars converge on a tightly crossed center.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Nested angular stars converge on a tightly crossed center.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1585.webp" aria-label="Enlarge artwork. Faceted solids alternate with black curves in a vertical chain.">
+            <img src="assets/selected-artwork/1585.webp" width="694" height="1209" loading="lazy" decoding="async" alt="Faceted solids alternate with black curves in a vertical chain.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Faceted solids alternate with black curves in a vertical chain.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1591.webp" aria-label="Enlarge artwork. A many-sided cage encloses an eye marked with an infinity sign.">
+            <img src="assets/selected-artwork/1591.webp" width="1320" height="1285" loading="lazy" decoding="async" alt="A many-sided cage encloses an eye marked with an infinity sign.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A many-sided cage encloses an eye marked with an infinity sign.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1609.webp" aria-label="Enlarge artwork. Cuboids on a square grid surround a clocklike circle.">
+            <img src="assets/selected-artwork/1609.webp" width="1223" height="1230" loading="lazy" decoding="async" alt="Cuboids on a square grid surround a clocklike circle.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Cuboids on a square grid surround a clocklike circle.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1614.webp" aria-label="Enlarge artwork. Checkered patches bend across the surface of a pale sphere.">
+            <img src="assets/selected-artwork/1614.webp" width="1282" height="1313" loading="lazy" decoding="async" alt="Checkered patches bend across the surface of a pale sphere.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Checkered patches bend across the surface of a pale sphere.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1623.webp" aria-label="Enlarge artwork. Fine marks scatter outward from a dense cluster near the center.">
+            <img src="assets/selected-artwork/1623.webp" width="1208" height="1283" loading="lazy" decoding="async" alt="Fine marks scatter outward from a dense cluster near the center.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Fine marks scatter outward from a dense cluster near the center.</figcaption>
+        </figure>
+      </div>
+    </div></section>
+    <section class="room" id="symbols" aria-labelledby="symbols-title"><div class="wrap">
+      <div class="room-head"><h2 id="symbols-title">Hands, eyes and emblems</h2><p>The hand recurs at several scales, from a pendant on a chain to a pair of palms large enough to hold a city.</p></div>
+      <div class="gallery">
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1626.webp" aria-label="Enlarge artwork. Hands cradle a globe, an eye, and a row of buildings in line.">
+            <img src="assets/selected-artwork/1626.webp" width="1167" height="1187" loading="lazy" decoding="async" alt="Hands cradle a globe, an eye, and a row of buildings in line.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Hands cradle a globe, an eye, and a row of buildings in line.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1639.webp" aria-label="Enlarge artwork. The globe-and-city composition in color, with luminous hands against a star field.">
+            <img src="assets/selected-artwork/1639.webp" width="1056" height="1560" loading="lazy" decoding="async" alt="The globe-and-city composition in color, with luminous hands against a star field.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>The globe-and-city composition in color, with luminous hands against a star field.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1618.webp" aria-label="Enlarge artwork. Yellow hands extend from a green field of circles and triangles.">
+            <img src="assets/selected-artwork/1618.webp" width="1200" height="1230" loading="lazy" decoding="async" alt="Yellow hands extend from a green field of circles and triangles.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Yellow hands extend from a green field of circles and triangles.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1619.webp" aria-label="Enlarge artwork. In line, the hands emerge from the points and intersections of the same rosette.">
+            <img src="assets/selected-artwork/1619.webp" width="1320" height="1313" loading="lazy" decoding="async" alt="In line, the hands emerge from the points and intersections of the same rosette.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>In line, the hands emerge from the points and intersections of the same rosette.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1586.webp" aria-label="Enlarge artwork. Two silver-colored hands meet at the center of a chain.">
+            <img src="assets/selected-artwork/1586.webp" width="1320" height="1316" loading="lazy" decoding="async" alt="Two silver-colored hands meet at the center of a chain.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Two silver-colored hands meet at the center of a chain.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1587.webp" aria-label="Enlarge artwork. An open-hand pendant hangs beneath a pierced geometric form.">
+            <img src="assets/selected-artwork/1587.webp" width="832" height="1232" loading="lazy" decoding="async" alt="An open-hand pendant hangs beneath a pierced geometric form.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>An open-hand pendant hangs beneath a pierced geometric form.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1608.webp" aria-label="Enlarge artwork. Hands reach toward one another across two curved grids.">
+            <img src="assets/selected-artwork/1608.webp" width="1343" height="977" loading="lazy" decoding="async" alt="Hands reach toward one another across two curved grids.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Hands reach toward one another across two curved grids.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1616.webp" aria-label="Enlarge artwork. A palm rises between spread wings and a wireframe solid.">
+            <img src="assets/selected-artwork/1616.webp" width="1202" height="1192" loading="lazy" decoding="async" alt="A palm rises between spread wings and a wireframe solid.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A palm rises between spread wings and a wireframe solid.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1577.webp" aria-label="Enlarge artwork. A winged eye sits beneath a rose in a black-and-white drawing.">
+            <img src="assets/selected-artwork/1577.webp" width="1320" height="1313" loading="lazy" decoding="async" alt="A winged eye sits beneath a rose in a black-and-white drawing.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A winged eye sits beneath a rose in a black-and-white drawing.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1579.webp" aria-label="Enlarge artwork. Blue wings and a red rose pick out the same design in color.">
+            <img src="assets/selected-artwork/1579.webp" width="1233" height="1560" loading="lazy" decoding="async" alt="Blue wings and a red rose pick out the same design in color.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Blue wings and a red rose pick out the same design in color.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1617.webp" aria-label="Enlarge artwork. Branching lines enclose an eye with a spiral pupil.">
+            <img src="assets/selected-artwork/1617.webp" width="1034" height="1114" loading="lazy" decoding="async" alt="Branching lines enclose an eye with a spiral pupil.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Branching lines enclose an eye with a spiral pupil.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1604.webp" aria-label="Enlarge artwork. A pair of wings extends from a double helix with red accents.">
+            <img src="assets/selected-artwork/1604.webp" width="1320" height="1313" loading="lazy" decoding="async" alt="A pair of wings extends from a double helix with red accents.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A pair of wings extends from a double helix with red accents.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1570.webp" aria-label="Enlarge artwork. Hands frame a brain above a tangle of descending strands.">
+            <img src="assets/selected-artwork/1570.webp" width="1290" height="1285" loading="lazy" decoding="async" alt="Hands frame a brain above a tangle of descending strands.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Hands frame a brain above a tangle of descending strands.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1595.webp" aria-label="Enlarge artwork. Crossing bands sweep around a figure beneath a single eye.">
+            <img src="assets/selected-artwork/1595.webp" width="1269" height="1472" loading="lazy" decoding="async" alt="Crossing bands sweep around a figure beneath a single eye.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Crossing bands sweep around a figure beneath a single eye.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1596.webp" aria-label="Enlarge artwork. A crowned skull rises above a pair of symmetrical animal forms.">
+            <img src="assets/selected-artwork/1596.webp" width="1254" height="1402" loading="lazy" decoding="async" alt="A crowned skull rises above a pair of symmetrical animal forms.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A crowned skull rises above a pair of symmetrical animal forms.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1650.webp" aria-label="Enlarge artwork. Hands reach down from a cloud and up from chains toward a winged heart.">
+            <img src="assets/selected-artwork/1650.webp" width="1136" height="1457" loading="lazy" decoding="async" alt="Hands reach down from a cloud and up from chains toward a winged heart.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Hands reach down from a cloud and up from chains toward a winged heart.</figcaption>
+        </figure>
+      </div>
+    </div></section>
+    <section class="room" id="scenes" aria-labelledby="scenes-title"><div class="wrap">
+      <div class="room-head"><h2 id="scenes-title">Portraits and imagined scenes</h2><p>Some works unfold like scenes. Others build a face a plane, a strip, or a color at a time.</p></div>
+      <div class="gallery">
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1640.webp" aria-label="Enlarge artwork. Angular planes of blue, green, and ochre define a face and neck.">
+            <img src="assets/selected-artwork/1640.webp" width="1201" height="1560" loading="lazy" decoding="async" alt="Angular planes of blue, green, and ochre define a face and neck.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Angular planes of blue, green, and ochre define a face and neck.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1627.webp" aria-label="Enlarge artwork. A flame rises from a folded-arm figure against a luminous green field.">
+            <img src="assets/selected-artwork/1627.webp" width="1114" height="1315" loading="lazy" decoding="async" alt="A flame rises from a folded-arm figure against a luminous green field.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A flame rises from a folded-arm figure against a luminous green field.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1631.webp" aria-label="Enlarge artwork. A small yellow mouse faces a curved row of teeth against deep blue.">
+            <img src="assets/selected-artwork/1631.webp" width="1154" height="1142" loading="lazy" decoding="async" alt="A small yellow mouse faces a curved row of teeth against deep blue.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A small yellow mouse faces a curved row of teeth against deep blue.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1630.webp" aria-label="Enlarge artwork. A figure stands among pink forms beneath a canopy of bright shapes.">
+            <img src="assets/selected-artwork/1630.webp" width="1320" height="1312" loading="lazy" decoding="async" alt="A figure stands among pink forms beneath a canopy of bright shapes.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A figure stands among pink forms beneath a canopy of bright shapes.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1601.webp" aria-label="Enlarge artwork. An eye looks down on a winged figure and a group standing in ripples.">
+            <img src="assets/selected-artwork/1601.webp" width="1052" height="1560" loading="lazy" decoding="async" alt="An eye looks down on a winged figure and a group standing in ripples.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>An eye looks down on a winged figure and a group standing in ripples.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1637.webp" aria-label="Enlarge artwork. The eye, winged figure, and ring of bodies reappear against blue water and sky.">
+            <img src="assets/selected-artwork/1637.webp" width="1048" height="1560" loading="lazy" decoding="async" alt="The eye, winged figure, and ring of bodies reappear against blue water and sky.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>The eye, winged figure, and ring of bodies reappear against blue water and sky.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1571.webp" aria-label="Enlarge artwork. Bands of hot and cool color cross a standing figure.">
+            <img src="assets/selected-artwork/1571.webp" width="1256" height="1560" loading="lazy" decoding="async" alt="Bands of hot and cool color cross a standing figure.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Bands of hot and cool color cross a standing figure.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1582.webp" aria-label="Enlarge artwork. Blue contours and yellow highlights define a torso against red.">
+            <img src="assets/selected-artwork/1582.webp" width="1128" height="1376" loading="lazy" decoding="async" alt="Blue contours and yellow highlights define a torso against red.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Blue contours and yellow highlights define a torso against red.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1606.webp" aria-label="Enlarge artwork. Colored fragments break up and reassemble the features of a face.">
+            <img src="assets/selected-artwork/1606.webp" width="1176" height="1400" loading="lazy" decoding="async" alt="Colored fragments break up and reassemble the features of a face.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>Colored fragments break up and reassemble the features of a face.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1607.webp" aria-label="Enlarge artwork. A checkered grid interrupts a face in shades of ochre and black.">
+            <img src="assets/selected-artwork/1607.webp" width="1108" height="1331" loading="lazy" decoding="async" alt="A checkered grid interrupts a face in shades of ochre and black.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A checkered grid interrupts a face in shades of ochre and black.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1603.webp" aria-label="Enlarge artwork. A black bird breaks the outline of an ornate arched doorway.">
+            <img src="assets/selected-artwork/1603.webp" width="944" height="1296" loading="lazy" decoding="async" alt="A black bird breaks the outline of an ornate arched doorway.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A black bird breaks the outline of an ornate arched doorway.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1584.webp" aria-label="Enlarge artwork. An egg-shaped outline rises behind a mountain and a stand of trees.">
+            <img src="assets/selected-artwork/1584.webp" width="1253" height="1560" loading="lazy" decoding="async" alt="An egg-shaped outline rises behind a mountain and a stand of trees.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>An egg-shaped outline rises behind a mountain and a stand of trees.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1572.webp" aria-label="Enlarge artwork. A suspended eye overlooks a gate between rain and water.">
+            <img src="assets/selected-artwork/1572.webp" width="1320" height="1312" loading="lazy" decoding="async" alt="A suspended eye overlooks a gate between rain and water.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A suspended eye overlooks a gate between rain and water.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1590.webp" aria-label="Enlarge artwork. A brain on long, slender legs stands beside a staircase.">
+            <img src="assets/selected-artwork/1590.webp" width="1225" height="1214" loading="lazy" decoding="async" alt="A brain on long, slender legs stands beside a staircase.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A brain on long, slender legs stands beside a staircase.</figcaption>
+        </figure>
+        <figure>
+          <a class="plate" href="assets/selected-artwork/1574.webp" aria-label="Enlarge artwork. A page of figures, faces, and fragments of geometry.">
+            <img src="assets/selected-artwork/1574.webp" width="1222" height="1560" loading="lazy" decoding="async" alt="A page of figures, faces, and fragments of geometry.">
+            <span aria-hidden="true" class="zoom">Enlarge</span>
+          </a>
+          <figcaption>A page of figures, faces, and fragments of geometry.</figcaption>
+        </figure>
+      </div>
+    </div></section>
+  </main>
+  <footer><div class="wrap"><nav aria-label="Related pages"><a href="index.html#creative">Creative &amp; Educational</a><a href="geometric-sculptures.html">Geometric Sculptures</a></nav><span>Nigel Patch · Nigelæn Research</span></div></footer>
+  <dialog id="viewer" aria-label="Enlarged artwork">
+    <div class="view-controls">
+      <span class="position" role="status"></span>
+      <button type="button" id="previous">Previous</button><button type="button" id="next">Next</button><button type="button" id="close-viewer" autofocus>Close</button>
+    </div>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </dialog>
+  <script>
+    const viewer = document.getElementById('viewer');
+    if (typeof viewer.showModal === 'function') {
+      const plates = Array.from(document.querySelectorAll('main .plate'));
+      const image = viewer.querySelector('img');
+      const caption = viewer.querySelector('figcaption');
+      const position = viewer.querySelector('.position');
+      const previous = document.getElementById('previous');
+      const next = document.getElementById('next');
+      let current = 0;
+      function display(index) {
+        if (index < 0 || index >= plates.length) return;
+        current = index;
+        const plate = plates[current];
+        image.src = plate.href;
+        image.alt = plate.querySelector('img').alt;
+        caption.textContent = plate.closest('figure').querySelector('figcaption').textContent;
+        position.textContent = (current + 1) + ' of ' + plates.length;
+        previous.disabled = current === 0;
+        next.disabled = current === plates.length - 1;
+      }
+      plates.forEach((plate, index) => plate.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        display(index);
+        viewer.showModal();
+      }));
+      previous.addEventListener('click', () => display(current - 1));
+      next.addEventListener('click', () => display(current + 1));
+      document.getElementById('close-viewer').addEventListener('click', () => viewer.close());
+      viewer.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          display(current + (event.key === 'ArrowLeft' ? -1 : 1));
+        }
+      });
+    }
+  </script>
+</body>
+</html>
