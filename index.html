@@ -352,8 +352,26 @@
         font: 10px var(--mono);
       }
       @media (max-width: 700px) {
-        nav {
-          display: none;
+        html {
+          scroll-padding-top: 9rem;
+        }
+        .head {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2px;
+          padding: 8px max(4vw, 14px) 4px;
+        }
+        .head nav {
+          flex-wrap: wrap;
+          gap: 0 14px;
+          max-width: 100%;
+          font-size: 0.78rem;
+        }
+        .head nav a {
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          white-space: nowrap;
         }
         .hero {
           min-height: 670px;
@@ -385,7 +403,7 @@
       <a class="brand" href="#top"
         ><b>N</b><span>NIGELÆN<br />RESEARCH</span></a
       >
-      <nav>
+      <nav aria-label="Main navigation">
         <a href="#publications">Publications</a><a href="#programs">Programs</a
         ><a href="research-release-board.html">Release board</a
         ><a href="#engineering">Engineering</a
